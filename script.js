@@ -7,20 +7,19 @@
 
   var WEATHER_REFRESH_MS = 30 * 60 * 1000;
   var DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var DAY_SHORT = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  var MONTH_SHORT = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
   var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
   var displayNode = document.getElementById("display");
   var hoursNode = document.getElementById("clock-hours");
   var minutesNode = document.getElementById("clock-minutes");
-  var secondsNode = document.getElementById("clock-seconds");
   var dateNode = document.getElementById("date-line");
-  var locationNode = document.getElementById("weather-location");
+  var weekdayNode = document.getElementById("weekday-line");
+  var iconNode = document.getElementById("weather-icon");
   var conditionNode = document.getElementById("weather-condition");
   var tempNode = document.getElementById("weather-temp");
-  var feelsNode = document.getElementById("weather-feels");
-  var highNode = document.getElementById("weather-high");
-  var lowNode = document.getElementById("weather-low");
-  var updatedNode = document.getElementById("weather-updated");
+  var rangeNode = document.getElementById("weather-range");
   var statusNode = document.getElementById("weather-status");
 
   function pad(value) {
@@ -91,8 +90,8 @@
     var now = new Date();
     hoursNode.innerHTML = pad(now.getHours());
     minutesNode.innerHTML = pad(now.getMinutes());
-    secondsNode.innerHTML = pad(now.getSeconds());
-    dateNode.innerHTML = DAYS[now.getDay()] + ", " + now.getDate() + " " + MONTHS[now.getMonth()] + " " + now.getFullYear();
+    dateNode.innerHTML = MONTH_SHORT[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear();
+    weekdayNode.innerHTML = DAY_SHORT[now.getDay()];
   }
 
   function weatherLabel(code) {
@@ -155,22 +154,33 @@
     return Math.round(value) + "\u00b0";
   }
 
+  function weatherIconMarkup(code) {
+    if (code === 0 || code === 1) {
+      return '<svg viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg"><circle cx="21" cy="18" r="11" fill="#ffe64b"/><g fill="#fffdf8"><circle cx="34" cy="24" r="11"/><circle cx="24" cy="28" r="9"/><circle cx="44" cy="28" r="8"/><rect x="24" y="24" width="28" height="12" rx="6"/></g></svg>';
+    }
+
+    if (code === 2 || code === 3 || code === 45 || code === 48) {
+      return '<svg viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg"><g fill="#fffdf8"><circle cx="28" cy="23" r="11"/><circle cx="18" cy="27" r="9"/><circle cx="40" cy="27" r="8"/><rect x="18" y="23" width="30" height="12" rx="6"/></g></svg>';
+    }
+
+    return '<svg viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg"><g fill="#fffdf8"><circle cx="28" cy="20" r="11"/><circle cx="18" cy="24" r="9"/><circle cx="40" cy="24" r="8"/><rect x="18" y="20" width="30" height="12" rx="6"/></g><g fill="#28e7f1"><path d="M18 39c2-4 2-4 4 0a3 3 0 1 1-4 0z"/><path d="M31 39c2-4 2-4 4 0a3 3 0 1 1-4 0z"/><path d="M44 39c2-4 2-4 4 0a3 3 0 1 1-4 0z"/></g></svg>';
+  }
+
   function updateWeatherUI(payload) {
     if (!payload || !payload.current || !payload.daily) {
       conditionNode.innerHTML = "Weather unavailable";
-      updatedNode.innerHTML = "Open-Meteo data could not be loaded.";
-      statusNode.innerHTML = "Weather error";
+      iconNode.innerHTML = "";
+      rangeNode.innerHTML = "-- / --";
+      tempNode.innerHTML = "--&deg;C";
+      statusNode.innerHTML = "WEATHER OFFLINE";
       return;
     }
 
-    locationNode.innerHTML = WEATHER_LOCATION.name;
     conditionNode.innerHTML = weatherLabel(payload.current.weather_code);
-    tempNode.innerHTML = asTemperature(payload.current.temperature_2m);
-    feelsNode.innerHTML = asTemperature(payload.current.apparent_temperature);
-    highNode.innerHTML = asTemperature(payload.daily.temperature_2m_max[0]);
-    lowNode.innerHTML = asTemperature(payload.daily.temperature_2m_min[0]);
-    updatedNode.innerHTML = "Updated " + formatTime(new Date());
-    statusNode.innerHTML = "Weather live";
+    iconNode.innerHTML = weatherIconMarkup(payload.current.weather_code);
+    tempNode.innerHTML = asTemperature(payload.current.temperature_2m) + "C";
+    rangeNode.innerHTML = "LOW " + asTemperature(payload.daily.temperature_2m_min[0]) + "   HIGH " + asTemperature(payload.daily.temperature_2m_max[0]);
+    statusNode.innerHTML = "UPDATED " + formatTime(new Date());
   }
 
   function formatTime(date) {
@@ -198,23 +208,29 @@
 
           if (payload && payload.error) {
             conditionNode.innerHTML = "Weather unavailable";
-            updatedNode.innerHTML = payload.message || "Weather service is unavailable.";
-            statusNode.innerHTML = "Weather offline";
+            iconNode.innerHTML = "";
+            rangeNode.innerHTML = payload.message || "-- / --";
+            tempNode.innerHTML = "--&deg;C";
+            statusNode.innerHTML = "WEATHER OFFLINE";
             return;
           }
 
           updateWeatherUI(payload);
         } catch (error) {
           conditionNode.innerHTML = "Weather unavailable";
-          updatedNode.innerHTML = "Received data could not be read.";
-          statusNode.innerHTML = "Weather parse error";
+          iconNode.innerHTML = "";
+          rangeNode.innerHTML = "DATA ERROR";
+          tempNode.innerHTML = "--&deg;C";
+          statusNode.innerHTML = "WEATHER ERROR";
         }
         return;
       }
 
       conditionNode.innerHTML = "Weather unavailable";
-      updatedNode.innerHTML = "Network request failed.";
-      statusNode.innerHTML = "Weather offline";
+      iconNode.innerHTML = "";
+      rangeNode.innerHTML = "NETWORK ERROR";
+      tempNode.innerHTML = "--&deg;C";
+      statusNode.innerHTML = "WEATHER OFFLINE";
     };
 
     request.send(null);

@@ -54,13 +54,15 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  display: table;
+  overflow: hidden;
   width: 438px;
   height: 238px;
   margin-left: -219px;
   margin-top: -119px;
   border-radius: 15px;
-  background: rgba(17, 25, 32, 0.88);
+  background:
+    linear-gradient(180deg, rgba(28, 34, 39, 0.92), rgba(4, 7, 10, 0.98) 22%, rgba(0, 0, 0, 0.99)),
+    rgba(17, 25, 32, 0.88);
   box-shadow:
     0 10px 22px rgba(0, 0, 0, 0.34),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
@@ -68,156 +70,147 @@ body {
   transform-origin: 50% 50%;
 }
 
-.time-panel,
-.weather-panel {
-  display: table-cell;
-  vertical-align: middle;
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 14px 16px 12px;
 }
 
-.time-panel {
-  width: 66%;
-  padding: 12px 12px 12px 14px;
+.clock-face:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 96px;
+  height: 54px;
+  border-top-right-radius: 15px;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.16), transparent 65%);
+  pointer-events: none;
 }
 
-.weather-panel {
-  width: 34%;
-  padding: 12px 12px 12px 10px;
-  border-left: 1px solid rgba(151, 197, 223, 0.16);
+.date-band {
+  position: relative;
+  z-index: 1;
+  text-align: center;
 }
 
-.topline {
-  height: 18px;
-  margin-bottom: 6px;
-}
-
-.badge {
-  display: inline-block;
-  padding: 3px 7px;
-  margin-right: 4px;
-  border: 1px solid rgba(151, 197, 223, 0.22);
-  border-radius: 999px;
-  color: #d6eef8;
-  font-size: 9px;
-  letter-spacing: 0.16em;
+.date-line {
+  color: #28e7f1;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 29px;
+  line-height: 0.96;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
-.badge-subtle {
-  color: #aab8c3;
-}
-
-.clock-wrap {
-  position: relative;
-  margin-bottom: 6px;
+.status-line {
+  margin-top: 2px;
+  min-height: 10px;
+  color: rgba(40, 231, 241, 0.65);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .clock-main {
-  font-family: Futura, "Trebuchet MS", sans-serif;
-  font-size: 82px;
+  color: #28e7f1;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 122px;
   font-weight: bold;
-  line-height: 0.88;
-  letter-spacing: -0.08em;
-  color: #f1ead8;
-  text-shadow: 0 0 18px rgba(241, 234, 216, 0.08);
+  line-height: 0.86;
+  letter-spacing: -0.07em;
+  text-align: center;
+  text-shadow: 0 0 16px rgba(40, 231, 241, 0.11);
 }
 
 .clock-separator {
   display: inline-block;
-  width: 24px;
+  width: 18px;
   text-align: center;
-  color: #d6eef8;
+  color: #28e7f1;
   -webkit-animation: pulse 1.2s infinite;
   animation: pulse 1.2s infinite;
 }
 
-.clock-seconds {
+.time-band {
   position: absolute;
-  top: 8px;
-  right: 2px;
-  min-width: 34px;
-  padding: 5px 6px;
-  border: 1px solid rgba(151, 197, 223, 0.18);
-  border-radius: 8px;
-  color: #d6eef8;
-  font-size: 18px;
-  text-align: center;
-  background: rgba(8, 14, 20, 0.32);
+  top: 45px;
+  right: 0;
+  left: 0;
 }
 
-.date-line {
-  margin-top: 4px;
-  color: #aab8c3;
-  font-family: "Palatino Linotype", Palatino, serif;
-  font-size: 20px;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
+.bottom-band {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  left: 16px;
+  display: table;
+  width: auto;
 }
 
-.weather-location {
-  margin-bottom: 2px;
-  color: #d6eef8;
-  font-size: 11px;
-  letter-spacing: 0.14em;
+.weekday-block,
+.weather-block,
+.temperature-block {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.weekday-block {
+  width: 28%;
+  color: #28e7f1;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 50px;
+  line-height: 0.9;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
+}
+
+.weather-block {
+  width: 42%;
+  padding-left: 6px;
+}
+
+.weather-icon {
+  float: left;
+  width: 54px;
+  height: 38px;
+  margin-top: 2px;
+  margin-right: 8px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.weather-text {
+  overflow: hidden;
 }
 
 .weather-condition {
-  margin-bottom: 10px;
-  color: #aab8c3;
-  font-family: "Palatino Linotype", Palatino, serif;
-  font-size: 18px;
-  line-height: 1.05;
-}
-
-.weather-temp-row {
-  margin-bottom: 10px;
-}
-
-.weather-temp {
-  font-family: Futura, "Trebuchet MS", sans-serif;
-  font-size: 44px;
-  line-height: 0.92;
-  color: #f1ead8;
-}
-
-.weather-feels {
-  margin-top: 5px;
-}
-
-.weather-label {
-  color: #768591;
-  font-size: 9px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.weather-value {
-  margin-top: 2px;
-  color: #d6eef8;
-  font-size: 18px;
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 1;
 }
 
 .weather-range {
-  margin-bottom: 10px;
+  margin-top: 4px;
+  color: rgba(40, 231, 241, 0.88);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.range-card {
-  display: inline-block;
-  width: 48%;
-  padding: 8px 6px;
-  border: 1px solid rgba(151, 197, 223, 0.16);
-  border-radius: 9px;
-  background: rgba(255, 255, 255, 0.02);
+.temperature-block {
+  width: 30%;
+  text-align: right;
 }
 
-.range-card + .range-card {
-  margin-left: 3%;
-}
-
-.weather-meta {
-  color: #768591;
-  font-size: 10px;
-  line-height: 1.35;
+.temperature-now {
+  color: #28e7f1;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 49px;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
 }
 
 @-webkit-keyframes pulse {
@@ -256,58 +249,80 @@ body {
     margin-top: -116px;
   }
 
-  .time-panel {
-    padding: 10px 10px 10px 12px;
-  }
-
-  .weather-panel {
-    padding: 10px 10px 10px 8px;
-  }
-
-  .clock-main {
-    font-size: 74px;
-  }
-
-  .clock-seconds {
-    top: 6px;
-    right: 1px;
-    font-size: 16px;
+  .clock-face {
+    padding: 12px 14px 10px;
   }
 
   .date-line {
-    font-size: 18px;
+    font-size: 27px;
+  }
+
+  .clock-main {
+    font-size: 116px;
+  }
+
+  .time-band {
+    top: 43px;
+  }
+
+  .weekday-block {
+    font-size: 47px;
   }
 
   .weather-condition {
     font-size: 16px;
   }
 
-  .weather-temp {
-    font-size: 39px;
+  .temperature-now {
+    font-size: 46px;
   }
 }
 
 @media screen and (orientation: portrait) {
   .display {
-    display: block;
     width: 296px;
     height: 432px;
     margin-left: -148px;
     margin-top: -216px;
   }
 
-  .time-panel,
-  .weather-panel {
-    display: block;
-    width: auto;
+  .clock-face {
+    padding: 18px 16px 14px;
   }
 
-  .weather-panel {
-    border-left: 0;
-    border-top: 1px solid rgba(151, 197, 223, 0.16);
+  .date-line {
+    font-size: 24px;
   }
 
   .clock-main {
-    font-size: 72px;
+    font-size: 88px;
+  }
+
+  .time-band {
+    top: 82px;
+  }
+
+  .bottom-band {
+    right: 14px;
+    bottom: 18px;
+    left: 14px;
+  }
+
+  .weekday-block {
+    font-size: 36px;
+  }
+
+  .weather-icon {
+    width: 44px;
+    height: 30px;
+    margin-right: 6px;
+  }
+
+  .weather-condition {
+    font-size: 14px;
+  }
+
+  .temperature-now {
+    font-size: 36px;
   }
 }

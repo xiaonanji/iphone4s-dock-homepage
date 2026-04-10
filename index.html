@@ -14,49 +14,36 @@
     <div class="backdrop"></div>
     <div class="display-shell">
       <main class="display" id="display" role="main" aria-label="Desk clock display">
-        <section class="time-panel" aria-label="Local time and date">
-          <div class="topline">
-            <span class="badge">Desk Mode</span>
-            <span class="badge badge-subtle" id="weather-status">Weather refresh pending</span>
-          </div>
+        <div class="clock-face">
+          <header class="date-band" aria-label="Date">
+            <div class="date-line" id="date-line">APR 10, 2026</div>
+            <div class="status-line" id="weather-status">WEATHER LIVE</div>
+          </header>
 
-          <div class="clock-wrap">
+          <section class="time-band" aria-label="Current time">
             <div class="clock-main">
-              <span id="clock-hours">00</span>
+              <span id="clock-hours">10</span>
               <span class="clock-separator" aria-hidden="true">:</span>
-              <span id="clock-minutes">00</span>
+              <span id="clock-minutes">58</span>
             </div>
-            <div class="clock-seconds" id="clock-seconds">00</div>
-          </div>
+          </section>
 
-          <div class="date-line" id="date-line">Monday, 10 April 2026</div>
-        </section>
+          <footer class="bottom-band" aria-label="Weekday and weather">
+            <div class="weekday-block" id="weekday-line">THU</div>
 
-        <aside class="weather-panel" aria-label="Weather">
-          <div class="weather-location" id="weather-location">Sydney</div>
-          <div class="weather-condition" id="weather-condition">Loading weather</div>
-
-          <div class="weather-temp-row">
-            <div class="weather-temp" id="weather-temp">--&deg;</div>
-            <div class="weather-feels">
-              <div class="weather-label">Feels like</div>
-              <div class="weather-value" id="weather-feels">--&deg;</div>
+            <div class="weather-block">
+              <div class="weather-icon" id="weather-icon" aria-hidden="true"></div>
+              <div class="weather-text">
+                <div class="weather-condition" id="weather-condition">Clear</div>
+                <div class="weather-range" id="weather-range">18&deg; / 24&deg;</div>
+              </div>
             </div>
-          </div>
 
-          <div class="weather-range">
-            <div class="range-card">
-              <div class="weather-label">High</div>
-              <div class="weather-value" id="weather-high">--&deg;</div>
+            <div class="temperature-block">
+              <div class="temperature-now" id="weather-temp">24&deg;C</div>
             </div>
-            <div class="range-card">
-              <div class="weather-label">Low</div>
-              <div class="weather-value" id="weather-low">--&deg;</div>
-            </div>
-          </div>
-
-          <div class="weather-meta" id="weather-updated">Waiting for first update</div>
-        </aside>
+          </footer>
+        </div>
       </main>
     </div>
   </div>
