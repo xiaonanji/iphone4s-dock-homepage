@@ -55,10 +55,10 @@ body {
   top: 50%;
   left: 50%;
   display: table;
-  width: 456px;
-  height: 216px;
-  margin-left: -228px;
-  margin-top: -108px;
+  width: 438px;
+  height: 238px;
+  margin-left: -219px;
+  margin-top: -119px;
   border: 1px solid rgba(172, 197, 214, 0.18);
   border-radius: 15px;
   background: rgba(17, 25, 32, 0.88);
@@ -251,10 +251,10 @@ body {
 
 @media screen and (max-height: 260px) {
   .display {
-    width: 440px;
-    height: 204px;
-    margin-left: -220px;
-    margin-top: -102px;
+    width: 426px;
+    height: 232px;
+    margin-left: -213px;
+    margin-top: -116px;
   }
 
   .time-panel {

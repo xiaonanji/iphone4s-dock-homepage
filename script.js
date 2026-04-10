@@ -35,7 +35,7 @@
     var scale;
     var scaleX;
     var targetScaleY;
-    var landscapeHeightRatio = 0.995;
+    var landscapeHeightRatio = 1;
 
     if (orientationValue === 90 || orientationValue === -90) {
       isPortrait = false;
@@ -45,8 +45,8 @@
       isPortrait = viewportHeight > viewportWidth;
     }
 
-    var baseWidth = isPortrait ? 296 : 456;
-    var baseHeight = isPortrait ? 432 : 216;
+    var baseWidth = isPortrait ? 296 : 438;
+    var baseHeight = isPortrait ? 432 : 238;
     var horizontalPadding = isPortrait ? 16 : 4;
     var verticalPadding = isPortrait ? 18 : 0;
 
