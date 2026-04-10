@@ -259,39 +259,85 @@
               window.webkitRequestAnimationFrame ||
               function (fn) { return setTimeout(fn, 16); };
 
-    // Each frame is 3 rows joined by \n. All frames same bounding width.
+    // 3-line frames. Row order: ears / face / legs.
     var DOG = {
-      //        ears       face+dir   legs
+      // fast run – legs visibly alternate /\/\ ↔ \/\/
       run: [
-        "  /\\  \n(o.o)>\n /||\\ ",
-        "  /\\  \n(o.o)>\n \\||/ "
+        "  /\\  \n(o.o)>\n/\\ /\\",
+        "  /\\  \n(o.o)>\n \\/\\/ "
       ],
+      // slow trot – calm eyes, gentle step
+      trot: [
+        "  /\\  \n(-.-)>\n  ||  ",
+        "  /\\  \n(-.-)>\n _||_ "
+      ],
+      // sitting still
       sit: [
         "  /\\  \n(o.o) \n  UU  "
       ],
+      // tail wags through 4 positions: \ - / _
       wag: [
-        "  /\\  \n(o.o)~\n  ||  ",
-        "  /\\  \n(o.o)^\n  ||  "
+        "  /\\  \n(o.o)\\\n  UU  ",
+        "  /\\  \n(o.o)-\n  UU  ",
+        "  /\\  \n(o.o)/\n  UU  ",
+        "  /\\  \n(o.o)_\n  UU  "
       ],
+      // barking – mouth opens O, snaps shut
+      bark: [
+        "  /\\  \n(oO)! \n  ||  ",
+        "  /\\  \n(o.o) \n  ||  "
+      ],
+      // back leg scratching ear – leg cycles /|\ positions
+      scratch: [
+        "  /\\  \n(o_o) \n  U/  ",
+        "  /\\  \n(o.o) \n  U|  ",
+        "  /\\  \n(o_o) \n  U\\  ",
+        "  /\\  \n(o.o) \n  UU  "
+      ],
+      // nose-down sniff – u eyes look down, dot trail on ground
+      sniff: [
+        "  /\\  \n(u.u)>\n/\\.   ",
+        "  /\\  \n(u.u)>\n ./\\. "
+      ],
+      // full somersault – ears and legs flip through 4 orientations
       roll: [
-        "  /\\  \n(o.o) \n  )(  ",   // normal
-        "  )(  \n(o.o) \n  /\\  ",   // upside-down (ears down, legs up)
         "  /\\  \n(o.o) \n  )(  ",
-        "  )(  \n(o.o) \n  /\\  "
+        "  )(  \n(o.o) \n  /\\  ",
+        "  \\/  \n(o.o) \n  /\\  ",
+        "  /\\  \n(o.o) \n  \\/  "
       ]
     };
 
-    var DOG_SPEED     = 52;   // px per second while running
-    var FRAME_RATE    = { run: 0.18, wag: 0.22, roll: 0.13, sit: 99 };
+    // px/s for each moving state
+    var SPEED = { run: 55, trot: 22, sniff: 16 };
 
-    var dState   = "run";
-    var dFrame   = 0;
-    var dFrameT  = 0;
-    var dStateT  = 0;
-    var dX       = -70;
-    var dLastT   = null;
+    // seconds each non-run state lasts
+    var DUR = { sit: 2.2, wag: 2.8, bark: 1.6, scratch: 2.2, sniff: 2.4, trot: 3.0, roll: 2.0 };
 
-    function dogSetState(s) {
+    // seconds between frames for each state
+    var FPS = { run: 0.14, trot: 0.28, sit: 9, wag: 0.17, bark: 0.32, scratch: 0.19, sniff: 0.38, roll: 0.13 };
+
+    // states that keep moving (at their own speed)
+    var MOVES = { trot: true, sniff: true };
+
+    var BEHAVIORS = ["sit", "wag", "bark", "scratch", "sniff", "trot", "roll"];
+
+    var dState  = "run";
+    var dFrame  = 0;
+    var dFrameT = 0;
+    var dStateT = 0;
+    var dX      = -70;
+    var dLastT  = null;
+    var dNextAct = null;   // next scheduled behavior name
+    var dNextT   = 0;      // dStateT value when to trigger it
+
+    function dogPlan() {
+      // Schedule a random behavior 2–4 s from now
+      dNextT   = dStateT + 2.0 + Math.random() * 2.0;
+      dNextAct = BEHAVIORS[Math.floor(Math.random() * BEHAVIORS.length)];
+    }
+
+    function dogSet(s) {
       dState  = s;
       dFrame  = 0;
       dFrameT = 0;
@@ -299,48 +345,57 @@
     }
 
     function dogTick(ts) {
-      if (dLastT === null) { dLastT = ts; }
+      if (dLastT === null) { dLastT = ts; raf(dogTick); return; }
       var dt = Math.min((ts - dLastT) / 1000, 0.05);
       dLastT = ts;
 
       dFrameT += dt;
       dStateT += dt;
 
-      var vw     = window.innerWidth || 480;
-      var frames = DOG[dState];
+      var vw = window.innerWidth || 480;
 
-      // Advance frame
-      if (dFrameT >= FRAME_RATE[dState]) {
+      // Advance animation frame
+      var interval = FPS[dState] || 0.2;
+      if (dFrameT >= interval) {
         dFrameT = 0;
-        dFrame  = (dFrame + 1) % frames.length;
+        dFrame  = (dFrame + 1) % DOG[dState].length;
       }
 
       if (dState === "run") {
-        dX += DOG_SPEED * dt;
+        if (!dNextAct) { dogPlan(); }
 
-        // Occasionally pause for a special behaviour mid-screen
-        if (dStateT > 3.5 && dX > 80 && dX < vw - 200) {
-          var r = Math.random();
-          if      (r < 0.004) { dogSetState("sit");  }
-          else if (r < 0.008) { dogSetState("wag");  }
-          else if (r < 0.011) { dogSetState("roll"); }
+        dX += SPEED.run * dt;
+
+        // Fire planned behavior when time is right and dog is mid-screen
+        if (dStateT >= dNextT && dX > 70 && dX < vw - 160) {
+          dogSet(dNextAct);
+          dNextAct = null;
         }
 
-        // Wrap: reappear from the left
-        if (dX > vw + 70) { dX = -70; dStateT = 0; }
+        // Wrap off right edge → reappear from left
+        if (dX > vw + 70) {
+          dX = -70;
+          dStateT = 0;
+          dogPlan();
+        }
+
+      } else if (MOVES[dState]) {
+        // Slow-moving states (trot, sniff)
+        dX += (SPEED[dState] || 20) * dt;
+        if (dStateT > DUR[dState]) { dogSet("run"); dogPlan(); }
+        if (dX > vw + 70) { dX = -70; }
 
       } else {
-        // sit ~2.5 s, wag ~2 s, roll ~1.6 s
-        var dur = dState === "sit" ? 2.5 : dState === "wag" ? 2.0 : 1.6;
-        if (dStateT > dur) { dogSetState("run"); }
+        // Stationary states (sit, wag, bark, scratch, roll)
+        if (dStateT > DUR[dState]) { dogSet("run"); dogPlan(); }
       }
 
-      dogEl.textContent    = DOG[dState][dFrame];
-      dogEl.style.left     = Math.round(dX) + "px";
-
+      dogEl.textContent = DOG[dState][dFrame];
+      dogEl.style.left  = Math.round(dX) + "px";
       raf(dogTick);
     }
 
+    dogPlan();
     raf(dogTick);
   }
   // ───────────────────────────────────────────────────────────

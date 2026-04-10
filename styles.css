@@ -248,7 +248,6 @@ body {
   flex: 0 0 44px;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(40, 231, 241, 0.12);
 }
 
 .dog-sprite {
