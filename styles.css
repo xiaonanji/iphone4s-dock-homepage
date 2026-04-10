@@ -94,7 +94,7 @@ body {
   flex: 1 1 auto;
   width: 100%;
   min-height: 0;
-  padding: 8px 14px 8px;
+  padding: 5px 14px 5px;
 }
 
 .clock-face:before {
@@ -121,7 +121,7 @@ body {
 .date-line {
   color: #00ff41;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 29px;
+  font-size: 24px;
   line-height: 0.96;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -130,7 +130,7 @@ body {
 .clock-main {
   color: #00ff41;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 122px;
+  font-size: 106px;
   font-weight: bold;
   line-height: 0.86;
   letter-spacing: -0.07em;
@@ -189,7 +189,7 @@ body {
   flex: 0 0 28%;
   color: #00ff41;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 50px;
+  font-size: 43px;
   line-height: 0.9;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -204,8 +204,8 @@ body {
 }
 
 .weather-icon {
-  width: 58px;
-  height: 40px;
+  width: 50px;
+  height: 34px;
   margin: 0 auto 2px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -229,16 +229,16 @@ body {
 .temperature-now {
   color: #00ff41;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 38px;
+  font-size: 32px;
   line-height: 0.9;
   letter-spacing: 0.02em;
 }
 
 .weather-range {
-  margin-top: 5px;
+  margin-top: 3px;
   color: rgba(0, 255, 65, 0.88);
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -246,8 +246,8 @@ body {
 
 .dog-strip {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 44px;
-  flex: 0 0 44px;
+  -webkit-flex: 0 0 70px;
+  flex: 0 0 70px;
   position: relative;
   overflow: hidden;
 }
@@ -287,7 +287,7 @@ body {
 .formula-label {
   color: rgba(0, 255, 65, 0.52);
   font-family: "Courier New", Courier, monospace;
-  font-size: 8px;
+  font-size: 9px;
   line-height: 1.1;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -296,12 +296,12 @@ body {
   text-overflow: ellipsis;
   width: 100%;
   text-align: center;
-  margin-bottom: 1px;
+  margin-bottom: 4px;
 }
 
 .formula-katex {
   color: rgba(0, 255, 65, 0.92);
-  font-size: 14px;
+  font-size: 22px;
   line-height: 1;
   text-align: center;
   max-width: 100%;
@@ -400,62 +400,19 @@ body {
   }
 
   .clock-face {
-    padding: 8px 12px 8px;
+    padding: 4px 12px 4px;
   }
 
   .date-line {
-    font-size: 27px;
+    font-size: 22px;
   }
 
   .clock-main {
-    font-size: 116px;
+    font-size: 100px;
   }
 
   .weekday-block {
-    font-size: 47px;
-  }
-
-  .weather-condition {
-    font-size: 12px;
-  }
-
-  .temperature-now {
-    font-size: 35px;
-  }
-
-  .weather-range {
-    font-size: 20px;
-  }
-}
-
-@media screen and (orientation: portrait) {
-  .display {
-    width: 296px;
-    height: 432px;
-    margin-left: -148px;
-    margin-top: -216px;
-  }
-
-  .clock-face {
-    padding: 16px 16px 16px;
-  }
-
-  .date-line {
-    font-size: 24px;
-  }
-
-  .clock-main {
-    font-size: 88px;
-  }
-
-  .weekday-block {
-    font-size: 36px;
-  }
-
-  .weather-icon {
-    width: 44px;
-    height: 30px;
-    margin-right: auto;
+    font-size: 40px;
   }
 
   .weather-condition {
@@ -468,5 +425,57 @@ body {
 
   .weather-range {
     font-size: 17px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .display {
+    width: 296px;
+    height: 432px;
+    margin-left: -148px;
+    margin-top: -216px;
+  }
+
+  .dog-strip {
+    -webkit-flex: 0 0 82px;
+    flex: 0 0 82px;
+  }
+
+  .formula-katex {
+    font-size: 26px;
+  }
+
+  .clock-face {
+    padding: 10px 16px 10px;
+  }
+
+  .date-line {
+    font-size: 21px;
+  }
+
+  .clock-main {
+    font-size: 80px;
+  }
+
+  .weekday-block {
+    font-size: 32px;
+  }
+
+  .weather-icon {
+    width: 40px;
+    height: 28px;
+    margin-right: auto;
+  }
+
+  .weather-condition {
+    font-size: 10px;
+  }
+
+  .temperature-now {
+    font-size: 27px;
+  }
+
+  .weather-range {
+    font-size: 15px;
   }
 }
