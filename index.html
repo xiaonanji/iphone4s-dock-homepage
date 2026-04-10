@@ -7,7 +7,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="format-detection" content="telephone=no">
   <title>Desk Display</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -54,7 +53,20 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      messageStyle: "none",
+      showProcessingMessages: false,
+      showMathMenu: false,
+      "HTML-CSS": {
+        availableFonts: ["TeX"],
+        webFont: "TeX",
+        imageFont: null,
+        scale: 85
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_HTML"></script>
   <script src="script.js"></script>
 </body>
 </html>

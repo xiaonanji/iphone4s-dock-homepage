@@ -418,17 +418,9 @@
     var idx     = getDayOfYear() % formulas.length;
     var formula = formulas[idx];
     formulaLabel.textContent = formula.title || "";
-    if (window.katex && formula.latex) {
-      try {
-        formulaKatex.innerHTML = katex.renderToString(formula.latex, {
-          throwOnError: false,
-          displayMode: false
-        });
-      } catch (e) {
-        formulaKatex.textContent = formula.latex;
-      }
-    } else {
-      formulaKatex.textContent = formula.latex || "";
+    formulaKatex.innerHTML = "\\(" + (formula.latex || "") + "\\)";
+    if (window.MathJax) {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub, formulaKatex]);
     }
   }
 

@@ -308,10 +308,11 @@ body {
   overflow: hidden;
 }
 
-/* Override KaTeX colours to match the green theme */
-.formula-katex .katex {
-  color: inherit;
-  font-size: 1em;
+/* MathJax output inherits the green colour from the parent */
+.formula-katex .MathJax,
+.formula-katex .MathJax_Display {
+  color: inherit !important;
+  display: inline !important;
 }
 
 /* Toggle button */
