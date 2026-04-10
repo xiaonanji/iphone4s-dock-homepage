@@ -301,7 +301,7 @@ body {
 
 .formula-katex {
   color: rgba(0, 255, 65, 0.92);
-  font-size: 22px;
+  font-size: 28px;
   line-height: 1;
   text-align: center;
   max-width: 100%;
@@ -442,7 +442,7 @@ body {
   }
 
   .formula-katex {
-    font-size: 26px;
+    font-size: 32px;
   }
 
   .clock-face {
