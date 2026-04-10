@@ -9,6 +9,7 @@
   var DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+  var displayNode = document.getElementById("display");
   var hoursNode = document.getElementById("clock-hours");
   var minutesNode = document.getElementById("clock-minutes");
   var secondsNode = document.getElementById("clock-seconds");
@@ -24,6 +25,34 @@
 
   function pad(value) {
     return value < 10 ? "0" + value : String(value);
+  }
+
+  function fitDisplay() {
+    var viewportWidth = window.innerWidth || document.documentElement.clientWidth || 480;
+    var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 320;
+    var isPortrait = viewportHeight > viewportWidth;
+    var baseWidth = isPortrait ? 296 : 448;
+    var baseHeight = isPortrait ? 432 : 248;
+    var horizontalPadding = isPortrait ? 16 : 12;
+    var verticalPadding = isPortrait ? 18 : 10;
+    var scaleX = (viewportWidth - horizontalPadding) / baseWidth;
+    var scaleY = (viewportHeight - verticalPadding) / baseHeight;
+    var scale = Math.min(scaleX, scaleY);
+
+    if (scale > 2.4) {
+      scale = 2.4;
+    }
+
+    if (scale < 0.72) {
+      scale = 0.72;
+    }
+
+    displayNode.style.width = baseWidth + "px";
+    displayNode.style.height = baseHeight + "px";
+    displayNode.style.marginLeft = Math.round(baseWidth / -2) + "px";
+    displayNode.style.marginTop = Math.round(baseHeight / -2) + "px";
+    displayNode.style.webkitTransform = "scale(" + scale + ")";
+    displayNode.style.transform = "scale(" + scale + ")";
   }
 
   function updateClock() {
@@ -153,8 +182,18 @@
   }
 
   updateClock();
+  fitDisplay();
   requestWeather();
 
   setInterval(updateClock, 1000);
   setInterval(requestWeather, WEATHER_REFRESH_MS);
+
+  if (window.addEventListener) {
+    window.addEventListener("resize", fitDisplay, false);
+    window.addEventListener("orientationchange", function () {
+      setTimeout(fitDisplay, 250);
+    }, false);
+  } else {
+    window.onresize = fitDisplay;
+  }
 })();

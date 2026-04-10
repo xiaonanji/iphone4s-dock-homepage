@@ -12,51 +12,53 @@
 <body>
   <div class="screen">
     <div class="backdrop"></div>
-    <main class="display" role="main" aria-label="Desk clock display">
-      <section class="time-panel" aria-label="Local time and date">
-        <div class="topline">
-          <span class="badge">Desk Mode</span>
-          <span class="badge badge-subtle" id="weather-status">Weather refresh pending</span>
-        </div>
-
-        <div class="clock-wrap">
-          <div class="clock-main">
-            <span id="clock-hours">00</span>
-            <span class="clock-separator" aria-hidden="true">:</span>
-            <span id="clock-minutes">00</span>
+    <div class="display-shell">
+      <main class="display" id="display" role="main" aria-label="Desk clock display">
+        <section class="time-panel" aria-label="Local time and date">
+          <div class="topline">
+            <span class="badge">Desk Mode</span>
+            <span class="badge badge-subtle" id="weather-status">Weather refresh pending</span>
           </div>
-          <div class="clock-seconds" id="clock-seconds">00</div>
-        </div>
 
-        <div class="date-line" id="date-line">Monday, 10 April 2026</div>
-      </section>
-
-      <aside class="weather-panel" aria-label="Weather">
-        <div class="weather-location" id="weather-location">Sydney</div>
-        <div class="weather-condition" id="weather-condition">Loading weather</div>
-
-        <div class="weather-temp-row">
-          <div class="weather-temp" id="weather-temp">--&deg;</div>
-          <div class="weather-feels">
-            <div class="weather-label">Feels like</div>
-            <div class="weather-value" id="weather-feels">--&deg;</div>
+          <div class="clock-wrap">
+            <div class="clock-main">
+              <span id="clock-hours">00</span>
+              <span class="clock-separator" aria-hidden="true">:</span>
+              <span id="clock-minutes">00</span>
+            </div>
+            <div class="clock-seconds" id="clock-seconds">00</div>
           </div>
-        </div>
 
-        <div class="weather-range">
-          <div class="range-card">
-            <div class="weather-label">High</div>
-            <div class="weather-value" id="weather-high">--&deg;</div>
-          </div>
-          <div class="range-card">
-            <div class="weather-label">Low</div>
-            <div class="weather-value" id="weather-low">--&deg;</div>
-          </div>
-        </div>
+          <div class="date-line" id="date-line">Monday, 10 April 2026</div>
+        </section>
 
-        <div class="weather-meta" id="weather-updated">Waiting for first update</div>
-      </aside>
-    </main>
+        <aside class="weather-panel" aria-label="Weather">
+          <div class="weather-location" id="weather-location">Sydney</div>
+          <div class="weather-condition" id="weather-condition">Loading weather</div>
+
+          <div class="weather-temp-row">
+            <div class="weather-temp" id="weather-temp">--&deg;</div>
+            <div class="weather-feels">
+              <div class="weather-label">Feels like</div>
+              <div class="weather-value" id="weather-feels">--&deg;</div>
+            </div>
+          </div>
+
+          <div class="weather-range">
+            <div class="range-card">
+              <div class="weather-label">High</div>
+              <div class="weather-value" id="weather-high">--&deg;</div>
+            </div>
+            <div class="range-card">
+              <div class="weather-label">Low</div>
+              <div class="weather-value" id="weather-low">--&deg;</div>
+            </div>
+          </div>
+
+          <div class="weather-meta" id="weather-updated">Waiting for first update</div>
+        </aside>
+      </main>
+    </div>
   </div>
 
   <script src="script.js"></script>

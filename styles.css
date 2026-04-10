@@ -20,10 +20,20 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background:
     radial-gradient(circle at 20% 20%, rgba(151, 197, 223, 0.17), transparent 36%),
     radial-gradient(circle at 85% 80%, rgba(82, 113, 132, 0.24), transparent 33%),
     linear-gradient(135deg, #090c10, #10161d 58%, #131a22);
+}
+
+.display-shell {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 .backdrop {
@@ -42,19 +52,21 @@ body {
 
 .display {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  bottom: 16px;
-  left: 16px;
+  top: 50%;
+  left: 50%;
   display: table;
-  width: auto;
-  height: auto;
+  width: 448px;
+  height: 248px;
+  margin-left: -224px;
+  margin-top: -124px;
   border: 1px solid rgba(172, 197, 214, 0.18);
   border-radius: 18px;
   background: rgba(17, 25, 32, 0.88);
   box-shadow:
     0 14px 28px rgba(0, 0, 0, 0.36),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
 }
 
 .time-panel,
@@ -237,12 +249,12 @@ body {
   }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-height: 280px) {
   .display {
-    top: 10px;
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
+    width: 432px;
+    height: 236px;
+    margin-left: -216px;
+    margin-top: -118px;
   }
 
   .time-panel {
@@ -279,6 +291,10 @@ body {
 @media screen and (orientation: portrait) {
   .display {
     display: block;
+    width: 296px;
+    height: 432px;
+    margin-left: -148px;
+    margin-top: -216px;
   }
 
   .time-panel,
