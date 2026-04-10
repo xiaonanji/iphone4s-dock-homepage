@@ -1,0 +1,2922 @@
+[
+  {
+    "id": 1,
+    "title": "Order of operations example",
+    "latex": "a+b\\times c",
+    "desc": "Example showing order of operations example.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 2,
+    "title": "Distributive law",
+    "latex": "a(b+c)=ab+ac",
+    "desc": "Standard law used in algebra.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 3,
+    "title": "Distributive law with subtraction",
+    "latex": "a(b-c)=ab-ac",
+    "desc": "Standard law used in algebra.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 4,
+    "title": "Common factor factorisation",
+    "latex": "ab+ac=a(b+c)",
+    "desc": "Formula for common factor factorisation.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 5,
+    "title": "Difference of squares",
+    "latex": "a^2-b^2=(a-b)(a+b)",
+    "desc": "Formula for difference of squares.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 6,
+    "title": "Square of a sum",
+    "latex": "(a+b)^2=a^2+2ab+b^2",
+    "desc": "Formula for square of a sum.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 7,
+    "title": "Square of a difference",
+    "latex": "(a-b)^2=a^2-2ab+b^2",
+    "desc": "Formula for square of a difference.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 8,
+    "title": "Cube of a sum",
+    "latex": "(a+b)^3=a^3+3a^2b+3ab^2+b^3",
+    "desc": "Formula for cube of a sum.",
+    "topic": "Algebra",
+    "level": "Year 10"
+  },
+  {
+    "id": 9,
+    "title": "Cube of a difference",
+    "latex": "(a-b)^3=a^3-3a^2b+3ab^2-b^3",
+    "desc": "Formula for cube of a difference.",
+    "topic": "Algebra",
+    "level": "Year 10"
+  },
+  {
+    "id": 10,
+    "title": "Difference of cubes",
+    "latex": "a^3-b^3=(a-b)(a^2+ab+b^2)",
+    "desc": "Formula for difference of cubes.",
+    "topic": "Algebra",
+    "level": "Year 10"
+  },
+  {
+    "id": 11,
+    "title": "Sum of cubes",
+    "latex": "a^3+b^3=(a+b)(a^2-ab+b^2)",
+    "desc": "Formula for sum of cubes.",
+    "topic": "Algebra",
+    "level": "Year 10"
+  },
+  {
+    "id": 12,
+    "title": "Linear equation",
+    "latex": "ax+b=c",
+    "desc": "Formula for linear equation.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 13,
+    "title": "Solve linear equation",
+    "latex": "x=\\frac{c-b}{a}",
+    "desc": "Formula for solve linear equation.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 14,
+    "title": "Two-step equation",
+    "latex": "ax+b=d",
+    "desc": "Formula for two-step equation.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 15,
+    "title": "Literal equation rearrangement",
+    "latex": "y=mx+b",
+    "desc": "Formula for literal equation rearrangement.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 16,
+    "title": "Rearrange for x",
+    "latex": "x=\\frac{y-b}{m}",
+    "desc": "Formula for rearrange for x.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 17,
+    "title": "Average formula",
+    "latex": "\\text{mean}=\\frac{\\text{sum of values}}{\\text{number of values}}",
+    "desc": "Standard formula for average formula.",
+    "topic": "Statistics",
+    "level": "Year 9"
+  },
+  {
+    "id": 18,
+    "title": "Percentage change",
+    "latex": "\\text{percentage change}=\\frac{\\text{change}}{\\text{original}}\\times 100\\%",
+    "desc": "Formula for percentage change.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 19,
+    "title": "Simple interest",
+    "latex": "I=Prt",
+    "desc": "Formula for simple interest.",
+    "topic": "Financial Maths",
+    "level": "Year 9"
+  },
+  {
+    "id": 20,
+    "title": "Amount with simple interest",
+    "latex": "A=P(1+rt)",
+    "desc": "Formula for amount with simple interest.",
+    "topic": "Financial Maths",
+    "level": "Year 9"
+  },
+  {
+    "id": 21,
+    "title": "Ratio equality",
+    "latex": "\\frac{a}{b}=\\frac{c}{d}",
+    "desc": "Formula for ratio equality.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 22,
+    "title": "Cross multiplication",
+    "latex": "ad=bc",
+    "desc": "Formula for cross multiplication.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 23,
+    "title": "Direct proportion",
+    "latex": "y=kx",
+    "desc": "Formula for direct proportion.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 24,
+    "title": "Inverse proportion",
+    "latex": "y=\\frac{k}{x}",
+    "desc": "Formula for inverse proportion.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 25,
+    "title": "Speed formula",
+    "latex": "v=\\frac{d}{t}",
+    "desc": "Standard formula for speed formula.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 26,
+    "title": "Distance formula",
+    "latex": "d=vt",
+    "desc": "Standard formula for distance formula.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 27,
+    "title": "Time formula",
+    "latex": "t=\\frac{d}{v}",
+    "desc": "Standard formula for time formula.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 28,
+    "title": "Density formula",
+    "latex": "\\rho=\\frac{m}{V}",
+    "desc": "Standard formula for density formula.",
+    "topic": "Algebra",
+    "level": "Year 10"
+  },
+  {
+    "id": 29,
+    "title": "Pressure formula",
+    "latex": "P=\\frac{F}{A}",
+    "desc": "Standard formula for pressure formula.",
+    "topic": "Algebra",
+    "level": "Year 10"
+  },
+  {
+    "id": 30,
+    "title": "Substitution formula",
+    "latex": "y=2x+3",
+    "desc": "Standard formula for substitution formula.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 31,
+    "title": "Expand two brackets",
+    "latex": "(x+a)(x+b)=x^2+(a+b)x+ab",
+    "desc": "Formula for expand two brackets.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 32,
+    "title": "Expand symmetric brackets",
+    "latex": "(x+a)(x-a)=x^2-a^2",
+    "desc": "Formula for expand symmetric brackets.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 33,
+    "title": "Quadratic standard form",
+    "latex": "ax^2+bx+c=0",
+    "desc": "Formula for quadratic standard form.",
+    "topic": "Algebra",
+    "level": "Year 10"
+  },
+  {
+    "id": 34,
+    "title": "Complete square identity",
+    "latex": "x^2+2ax=(x+a)^2-a^2",
+    "desc": "Standard identity used in algebra.",
+    "topic": "Algebra",
+    "level": "Year 10"
+  },
+  {
+    "id": 35,
+    "title": "Quadratic factor form",
+    "latex": "(x-r_1)(x-r_2)=0",
+    "desc": "Formula for quadratic factor form.",
+    "topic": "Algebra",
+    "level": "Year 10"
+  },
+  {
+    "id": 36,
+    "title": "Zero product property",
+    "latex": "ab=0\\Rightarrow a=0\\text{ or }b=0",
+    "desc": "Formula for zero product property.",
+    "topic": "Algebra",
+    "level": "Year 10"
+  },
+  {
+    "id": 37,
+    "title": "Square root relation",
+    "latex": "x^2=a\\Rightarrow x=\\pm\\sqrt{a}",
+    "desc": "Formula for square root relation.",
+    "topic": "Algebra",
+    "level": "Year 10"
+  },
+  {
+    "id": 38,
+    "title": "Absolute value definition",
+    "latex": "|x|=\\begin{cases}x,&x\\ge0\\\\-x,&x<0\\end{cases}",
+    "desc": "Definition used in algebra.",
+    "topic": "Algebra",
+    "level": "Year 10"
+  },
+  {
+    "id": 39,
+    "title": "Absolute value equation",
+    "latex": "|x|=a\\Rightarrow x=\\pm a",
+    "desc": "Formula for absolute value equation.",
+    "topic": "Algebra",
+    "level": "Year 10"
+  },
+  {
+    "id": 40,
+    "title": "Negative exponent",
+    "latex": "a^{-n}=\\frac{1}{a^n}",
+    "desc": "Formula for negative exponent.",
+    "topic": "Indices",
+    "level": "Year 10"
+  },
+  {
+    "id": 41,
+    "title": "Zero exponent",
+    "latex": "a^0=1",
+    "desc": "Formula for zero exponent.",
+    "topic": "Indices",
+    "level": "Year 10"
+  },
+  {
+    "id": 42,
+    "title": "Product of powers",
+    "latex": "a^m\\cdot a^n=a^{m+n}",
+    "desc": "Formula for product of powers.",
+    "topic": "Indices",
+    "level": "Year 10"
+  },
+  {
+    "id": 43,
+    "title": "Quotient of powers",
+    "latex": "\\frac{a^m}{a^n}=a^{m-n}",
+    "desc": "Formula for quotient of powers.",
+    "topic": "Indices",
+    "level": "Year 10"
+  },
+  {
+    "id": 44,
+    "title": "Power of a power",
+    "latex": "(a^m)^n=a^{mn}",
+    "desc": "Formula for power of a power.",
+    "topic": "Indices",
+    "level": "Year 10"
+  },
+  {
+    "id": 45,
+    "title": "Power of a product",
+    "latex": "(ab)^n=a^n b^n",
+    "desc": "Formula for power of a product.",
+    "topic": "Indices",
+    "level": "Year 10"
+  },
+  {
+    "id": 46,
+    "title": "Power of a quotient",
+    "latex": "\\left(\\frac{a}{b}\\right)^n=\\frac{a^n}{b^n}",
+    "desc": "Formula for power of a quotient.",
+    "topic": "Indices",
+    "level": "Year 10"
+  },
+  {
+    "id": 47,
+    "title": "Fractional exponent",
+    "latex": "a^{1/n}=\\sqrt[n]{a}",
+    "desc": "Formula for fractional exponent.",
+    "topic": "Indices",
+    "level": "Year 10"
+  },
+  {
+    "id": 48,
+    "title": "General fractional exponent",
+    "latex": "a^{m/n}=\\sqrt[n]{a^m}",
+    "desc": "General solution or general form for fractional exponent.",
+    "topic": "Indices",
+    "level": "Year 10"
+  },
+  {
+    "id": 49,
+    "title": "Scientific notation",
+    "latex": "N=a\\times10^n",
+    "desc": "Formula for scientific notation.",
+    "topic": "Indices",
+    "level": "Year 10"
+  },
+  {
+    "id": 50,
+    "title": "Gradient formula",
+    "latex": "m=\\frac{y_2-y_1}{x_2-x_1}",
+    "desc": "Standard formula for gradient formula.",
+    "topic": "Coordinate Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 51,
+    "title": "Line through point-slope",
+    "latex": "y-y_1=m(x-x_1)",
+    "desc": "Formula for line through point-slope.",
+    "topic": "Coordinate Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 52,
+    "title": "Parallel lines",
+    "latex": "m_1=m_2",
+    "desc": "Formula for parallel lines.",
+    "topic": "Coordinate Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 53,
+    "title": "Perpendicular lines",
+    "latex": "m_1m_2=-1",
+    "desc": "Formula for perpendicular lines.",
+    "topic": "Coordinate Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 54,
+    "title": "Midpoint formula",
+    "latex": "\\left(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2}\\right)",
+    "desc": "Standard formula for midpoint formula.",
+    "topic": "Coordinate Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 55,
+    "title": "Distance in a line",
+    "latex": "\\text{distance}=|x_2-x_1|",
+    "desc": "Formula for distance in a line.",
+    "topic": "Coordinate Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 56,
+    "title": "Cartesian distance formula",
+    "latex": "d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}",
+    "desc": "Standard formula for cartesian distance formula.",
+    "topic": "Coordinate Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 57,
+    "title": "Area of rectangle",
+    "latex": "A=lw",
+    "desc": "Formula for area of rectangle.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 58,
+    "title": "Perimeter of rectangle",
+    "latex": "P=2l+2w",
+    "desc": "Formula for perimeter of rectangle.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 59,
+    "title": "Area of triangle",
+    "latex": "A=\\frac{1}{2}bh",
+    "desc": "Formula for area of triangle.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 60,
+    "title": "Area of parallelogram",
+    "latex": "A=bh",
+    "desc": "Formula for area of parallelogram.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 61,
+    "title": "Area of trapezium",
+    "latex": "A=\\frac{1}{2}(a+b)h",
+    "desc": "Formula for area of trapezium.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 62,
+    "title": "Area of circle",
+    "latex": "A=\\pi r^2",
+    "desc": "Formula for area of circle.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 63,
+    "title": "Circumference of circle",
+    "latex": "C=2\\pi r",
+    "desc": "Formula for circumference of circle.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 64,
+    "title": "Arc length",
+    "latex": "s=r\\theta",
+    "desc": "Formula for arc length.",
+    "topic": "Geometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 65,
+    "title": "Sector area",
+    "latex": "A=\\frac{1}{2}r^2\\theta",
+    "desc": "Formula for sector area.",
+    "topic": "Geometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 66,
+    "title": "Pythagorean theorem",
+    "latex": "a^2+b^2=c^2",
+    "desc": "Formula for pythagorean theorem.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 67,
+    "title": "Converse of Pythagoras",
+    "latex": "c^2=a^2+b^2",
+    "desc": "Formula for converse of Pythagoras.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 68,
+    "title": "Volume of prism",
+    "latex": "V=Ah",
+    "desc": "Formula for volume of prism.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 69,
+    "title": "Volume of cylinder",
+    "latex": "V=\\pi r^2 h",
+    "desc": "Formula for volume of cylinder.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 70,
+    "title": "Surface area of cylinder",
+    "latex": "A=2\\pi r^2+2\\pi rh",
+    "desc": "Formula for surface area of cylinder.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 71,
+    "title": "Volume of pyramid",
+    "latex": "V=\\frac{1}{3}Ah",
+    "desc": "Formula for volume of pyramid.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 72,
+    "title": "Volume of cone",
+    "latex": "V=\\frac{1}{3}\\pi r^2 h",
+    "desc": "Formula for volume of cone.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 73,
+    "title": "Volume of sphere",
+    "latex": "V=\\frac{4}{3}\\pi r^3",
+    "desc": "Formula for volume of sphere.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 74,
+    "title": "Surface area of sphere",
+    "latex": "A=4\\pi r^2",
+    "desc": "Formula for surface area of sphere.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 75,
+    "title": "SOH",
+    "latex": "\\sin\\theta=\\frac{\\text{opposite}}{\\text{hypotenuse}}",
+    "desc": "Formula for sOH.",
+    "topic": "Trigonometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 76,
+    "title": "CAH",
+    "latex": "\\cos\\theta=\\frac{\\text{adjacent}}{\\text{hypotenuse}}",
+    "desc": "Formula for cAH.",
+    "topic": "Trigonometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 77,
+    "title": "TOA",
+    "latex": "\\tan\\theta=\\frac{\\text{opposite}}{\\text{adjacent}}",
+    "desc": "Formula for tOA.",
+    "topic": "Trigonometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 78,
+    "title": "Tangent as sine over cosine",
+    "latex": "\\tan\\theta=\\frac{\\sin\\theta}{\\cos\\theta}",
+    "desc": "Formula for tangent as sine over cosine.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 79,
+    "title": "Pythagorean identity",
+    "latex": "\\sin^2\\theta+\\cos^2\\theta=1",
+    "desc": "Standard identity used in trigonometry.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 80,
+    "title": "Secant identity",
+    "latex": "1+\\tan^2\\theta=\\sec^2\\theta",
+    "desc": "Standard identity used in trigonometry.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 81,
+    "title": "Cosecant identity",
+    "latex": "1+\\cot^2\\theta=\\csc^2\\theta",
+    "desc": "Standard identity used in trigonometry.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 82,
+    "title": "Complementary angles",
+    "latex": "\\sin(90^\\circ-\\theta)=\\cos\\theta",
+    "desc": "Formula for complementary angles.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 83,
+    "title": "Complementary cosine",
+    "latex": "\\cos(90^\\circ-\\theta)=\\sin\\theta",
+    "desc": "Formula for complementary cosine.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 84,
+    "title": "Supplementary sine",
+    "latex": "\\sin(180^\\circ-\\theta)=\\sin\\theta",
+    "desc": "Formula for supplementary sine.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 85,
+    "title": "Supplementary cosine",
+    "latex": "\\cos(180^\\circ-\\theta)=-\\cos\\theta",
+    "desc": "Formula for supplementary cosine.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 86,
+    "title": "Supplementary tangent",
+    "latex": "\\tan(180^\\circ-\\theta)=-\\tan\\theta",
+    "desc": "Formula for supplementary tangent.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 87,
+    "title": "Sine of negative angle",
+    "latex": "\\sin(-\\theta)=-\\sin\\theta",
+    "desc": "Formula for sine of negative angle.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 88,
+    "title": "Cosine of negative angle",
+    "latex": "\\cos(-\\theta)=\\cos\\theta",
+    "desc": "Formula for cosine of negative angle.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 89,
+    "title": "Tangent of negative angle",
+    "latex": "\\tan(-\\theta)=-\\tan\\theta",
+    "desc": "Formula for tangent of negative angle.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 90,
+    "title": "Sine rule",
+    "latex": "\\frac{a}{\\sin A}=\\frac{b}{\\sin B}=\\frac{c}{\\sin C}",
+    "desc": "Standard rule used in trigonometry.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 91,
+    "title": "Cosine rule",
+    "latex": "c^2=a^2+b^2-2ab\\cos C",
+    "desc": "Standard rule used in trigonometry.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 92,
+    "title": "Cosine rule rearranged",
+    "latex": "\\cos C=\\frac{a^2+b^2-c^2}{2ab}",
+    "desc": "Standard rule used in trigonometry.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 93,
+    "title": "Area with sine",
+    "latex": "A=\\frac{1}{2}ab\\sin C",
+    "desc": "Formula for area with sine.",
+    "topic": "Trigonometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 94,
+    "title": "Radian conversion",
+    "latex": "180^\\circ=\\pi\\text{ rad}",
+    "desc": "Formula for radian conversion.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 95,
+    "title": "Degrees to radians",
+    "latex": "\\theta_{\\text{rad}}=\\theta_{\\deg}\\times\\frac{\\pi}{180}",
+    "desc": "Formula for degrees to radians.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 96,
+    "title": "Radians to degrees",
+    "latex": "\\theta_{\\deg}=\\theta_{\\text{rad}}\\times\\frac{180}{\\pi}",
+    "desc": "Formula for radians to degrees.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 97,
+    "title": "Unit circle x-coordinate",
+    "latex": "x=\\cos\\theta",
+    "desc": "Formula for unit circle x-coordinate.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 98,
+    "title": "Unit circle y-coordinate",
+    "latex": "y=\\sin\\theta",
+    "desc": "Formula for unit circle y-coordinate.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 99,
+    "title": "Unit circle tangent",
+    "latex": "\\tan\\theta=\\frac{y}{x}",
+    "desc": "Formula for unit circle tangent.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 100,
+    "title": "General sine solution",
+    "latex": "\\theta=n\\pi+(-1)^n\\alpha",
+    "desc": "General solution or general form for sine solution.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 101,
+    "title": "General cosine solution",
+    "latex": "\\theta=2n\\pi\\pm\\alpha",
+    "desc": "General solution or general form for cosine solution.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 102,
+    "title": "General tangent solution",
+    "latex": "\\theta=n\\pi+\\alpha",
+    "desc": "General solution or general form for tangent solution.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 103,
+    "title": "Double-angle sine",
+    "latex": "\\sin 2x=2\\sin x\\cos x",
+    "desc": "Formula for double-angle sine.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 104,
+    "title": "Double-angle cosine 1",
+    "latex": "\\cos 2x=\\cos^2x-\\sin^2x",
+    "desc": "Formula for double-angle cosine 1.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 105,
+    "title": "Double-angle cosine 2",
+    "latex": "\\cos 2x=2\\cos^2x-1",
+    "desc": "Formula for double-angle cosine 2.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 106,
+    "title": "Double-angle cosine 3",
+    "latex": "\\cos 2x=1-2\\sin^2x",
+    "desc": "Formula for double-angle cosine 3.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 107,
+    "title": "Double-angle tangent",
+    "latex": "\\tan 2x=\\frac{2\\tan x}{1-\\tan^2x}",
+    "desc": "Formula for double-angle tangent.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 108,
+    "title": "Half-angle sine squared",
+    "latex": "\\sin^2x=\\frac{1-\\cos2x}{2}",
+    "desc": "Formula for half-angle sine squared.",
+    "topic": "Trigonometry",
+    "level": "Year 12"
+  },
+  {
+    "id": 109,
+    "title": "Half-angle cosine squared",
+    "latex": "\\cos^2x=\\frac{1+\\cos2x}{2}",
+    "desc": "Formula for half-angle cosine squared.",
+    "topic": "Trigonometry",
+    "level": "Year 12"
+  },
+  {
+    "id": 110,
+    "title": "Sum to product sine",
+    "latex": "\\sin A+\\sin B=2\\sin\\frac{A+B}{2}\\cos\\frac{A-B}{2}",
+    "desc": "Formula for sum to product sine.",
+    "topic": "Trigonometry",
+    "level": "Year 12"
+  },
+  {
+    "id": 111,
+    "title": "Difference to product sine",
+    "latex": "\\sin A-\\sin B=2\\cos\\frac{A+B}{2}\\sin\\frac{A-B}{2}",
+    "desc": "Formula for difference to product sine.",
+    "topic": "Trigonometry",
+    "level": "Year 12"
+  },
+  {
+    "id": 112,
+    "title": "Sum to product cosine",
+    "latex": "\\cos A+\\cos B=2\\cos\\frac{A+B}{2}\\cos\\frac{A-B}{2}",
+    "desc": "Formula for sum to product cosine.",
+    "topic": "Trigonometry",
+    "level": "Year 12"
+  },
+  {
+    "id": 113,
+    "title": "Difference to product cosine",
+    "latex": "\\cos A-\\cos B=-2\\sin\\frac{A+B}{2}\\sin\\frac{A-B}{2}",
+    "desc": "Formula for difference to product cosine.",
+    "topic": "Trigonometry",
+    "level": "Year 12"
+  },
+  {
+    "id": 114,
+    "title": "Product to sum 1",
+    "latex": "\\sin A\\sin B=\\frac{1}{2}[\\cos(A-B)-\\cos(A+B)]",
+    "desc": "Formula for product to sum 1.",
+    "topic": "Trigonometry",
+    "level": "Year 12"
+  },
+  {
+    "id": 115,
+    "title": "Product to sum 2",
+    "latex": "\\cos A\\cos B=\\frac{1}{2}[\\cos(A-B)+\\cos(A+B)]",
+    "desc": "Formula for product to sum 2.",
+    "topic": "Trigonometry",
+    "level": "Year 12"
+  },
+  {
+    "id": 116,
+    "title": "Product to sum 3",
+    "latex": "\\sin A\\cos B=\\frac{1}{2}[\\sin(A+B)+\\sin(A-B)]",
+    "desc": "Formula for product to sum 3.",
+    "topic": "Trigonometry",
+    "level": "Year 12"
+  },
+  {
+    "id": 117,
+    "title": "Sine addition",
+    "latex": "\\sin(A+B)=\\sin A\\cos B+\\cos A\\sin B",
+    "desc": "Formula for sine addition.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 118,
+    "title": "Sine subtraction",
+    "latex": "\\sin(A-B)=\\sin A\\cos B-\\cos A\\sin B",
+    "desc": "Formula for sine subtraction.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 119,
+    "title": "Cosine addition",
+    "latex": "\\cos(A+B)=\\cos A\\cos B-\\sin A\\sin B",
+    "desc": "Formula for cosine addition.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 120,
+    "title": "Cosine subtraction",
+    "latex": "\\cos(A-B)=\\cos A\\cos B+\\sin A\\sin B",
+    "desc": "Formula for cosine subtraction.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 121,
+    "title": "Tangent addition",
+    "latex": "\\tan(A+B)=\\frac{\\tan A+\\tan B}{1-\\tan A\\tan B}",
+    "desc": "Formula for tangent addition.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 122,
+    "title": "Tangent subtraction",
+    "latex": "\\tan(A-B)=\\frac{\\tan A-\\tan B}{1+\\tan A\\tan B}",
+    "desc": "Formula for tangent subtraction.",
+    "topic": "Trigonometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 123,
+    "title": "Amplitude of sine",
+    "latex": "y=a\\sin(bx+c)+d",
+    "desc": "Formula for amplitude of sine.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 124,
+    "title": "Period of sine",
+    "latex": "T=\\frac{2\\pi}{|b|}",
+    "desc": "Formula for period of sine.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 125,
+    "title": "Phase shift",
+    "latex": "\\text{phase shift}=-\\frac{c}{b}",
+    "desc": "Formula for phase shift.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 126,
+    "title": "Amplitude",
+    "latex": "\\text{amplitude}=|a|",
+    "desc": "Formula for amplitude.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 127,
+    "title": "Vertical shift",
+    "latex": "\\text{midline}=d",
+    "desc": "Formula for vertical shift.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 128,
+    "title": "Basic sine graph",
+    "latex": "y=\\sin x",
+    "desc": "Formula for basic sine graph.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 129,
+    "title": "Basic cosine graph",
+    "latex": "y=\\cos x",
+    "desc": "Formula for basic cosine graph.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 130,
+    "title": "Basic tangent graph",
+    "latex": "y=\\tan x",
+    "desc": "Formula for basic tangent graph.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 131,
+    "title": "Sine maximum",
+    "latex": "\\max(a\\sin x)=|a|",
+    "desc": "Formula for sine maximum.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 132,
+    "title": "Cosine minimum",
+    "latex": "\\min(a\\cos x)=-|a|",
+    "desc": "Formula for cosine minimum.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 133,
+    "title": "Triangle angle sum",
+    "latex": "A+B+C=180^\\circ",
+    "desc": "Formula for triangle angle sum.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 134,
+    "title": "Exterior angle theorem",
+    "latex": "\\text{exterior angle}=\\text{sum of two remote interior angles}",
+    "desc": "Formula for exterior angle theorem.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 135,
+    "title": "Polygon interior angle sum",
+    "latex": "S=(n-2)\\times180^\\circ",
+    "desc": "Formula for polygon interior angle sum.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 136,
+    "title": "Regular polygon interior angle",
+    "latex": "\\frac{(n-2)180^\\circ}{n}",
+    "desc": "Formula for regular polygon interior angle.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 137,
+    "title": "Regular polygon exterior angle",
+    "latex": "\\frac{360^\\circ}{n}",
+    "desc": "Formula for regular polygon exterior angle.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 138,
+    "title": "Area of rhombus",
+    "latex": "A=\\frac{1}{2}d_1d_2",
+    "desc": "Formula for area of rhombus.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 139,
+    "title": "Circle chord theorem",
+    "latex": "\\angle\\text{ at centre}=2\\times\\angle\\text{ at circumference}",
+    "desc": "Formula for circle chord theorem.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 140,
+    "title": "Semicircle angle",
+    "latex": "\\angle=90^\\circ",
+    "desc": "Formula for semicircle angle.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 141,
+    "title": "Cyclic quadrilateral",
+    "latex": "A+C=180^\\circ",
+    "desc": "Formula for cyclic quadrilateral.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 142,
+    "title": "Tangent radius theorem",
+    "latex": "\\text{radius} \\perp \\text{tangent}",
+    "desc": "Formula for tangent radius theorem.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 143,
+    "title": "Similar triangles side ratio",
+    "latex": "\\frac{a_1}{a_2}=\\frac{b_1}{b_2}=\\frac{c_1}{c_2}",
+    "desc": "Formula for similar triangles side ratio.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 144,
+    "title": "Area scale factor",
+    "latex": "\\frac{A_1}{A_2}=k^2",
+    "desc": "Formula for area scale factor.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 145,
+    "title": "Volume scale factor",
+    "latex": "\\frac{V_1}{V_2}=k^3",
+    "desc": "Formula for volume scale factor.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 146,
+    "title": "Surface area scale factor",
+    "latex": "\\frac{S_1}{S_2}=k^2",
+    "desc": "Formula for surface area scale factor.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 147,
+    "title": "Bearings addition",
+    "latex": "\\text{clockwise from north}",
+    "desc": "Formula for bearings addition.",
+    "topic": "Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 148,
+    "title": "Function notation",
+    "latex": "y=f(x)",
+    "desc": "Formula for function notation.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 149,
+    "title": "Composite function",
+    "latex": "(f\\circ g)(x)=f(g(x))",
+    "desc": "Formula for composite function.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 150,
+    "title": "Inverse relation",
+    "latex": "f^{-1}(f(x))=x",
+    "desc": "Formula for inverse relation.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 151,
+    "title": "Linear function",
+    "latex": "f(x)=mx+b",
+    "desc": "Formula for linear function.",
+    "topic": "Functions",
+    "level": "Year 9"
+  },
+  {
+    "id": 152,
+    "title": "Quadratic function",
+    "latex": "f(x)=ax^2+bx+c",
+    "desc": "Formula for quadratic function.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 153,
+    "title": "Quadratic turning point",
+    "latex": "x=-\\frac{b}{2a}",
+    "desc": "Formula for quadratic turning point.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 154,
+    "title": "Quadratic vertex form",
+    "latex": "y=a(x-h)^2+k",
+    "desc": "Formula for quadratic vertex form.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 155,
+    "title": "Quadratic vertex",
+    "latex": "(h,k)",
+    "desc": "Formula for quadratic vertex.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 156,
+    "title": "Quadratic discriminant",
+    "latex": "\\Delta=b^2-4ac",
+    "desc": "Formula for quadratic discriminant.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 157,
+    "title": "Quadratic roots by discriminant",
+    "latex": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+    "desc": "Formula for quadratic roots by discriminant.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 158,
+    "title": "Axis of symmetry",
+    "latex": "x=-\\frac{b}{2a}",
+    "desc": "Formula for axis of symmetry.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 159,
+    "title": "Sum of roots",
+    "latex": "r_1+r_2=-\\frac{b}{a}",
+    "desc": "Formula for sum of roots.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 160,
+    "title": "Product of roots",
+    "latex": "r_1r_2=\\frac{c}{a}",
+    "desc": "Formula for product of roots.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 161,
+    "title": "Exponential function",
+    "latex": "y=a^x",
+    "desc": "Formula for exponential function.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 162,
+    "title": "Exponential growth model",
+    "latex": "A=A_0(1+r)^t",
+    "desc": "Formula related to exponential growth model.",
+    "topic": "Financial Maths",
+    "level": "Year 11"
+  },
+  {
+    "id": 163,
+    "title": "Exponential decay model",
+    "latex": "A=A_0(1-r)^t",
+    "desc": "Formula related to exponential decay model.",
+    "topic": "Financial Maths",
+    "level": "Year 11"
+  },
+  {
+    "id": 164,
+    "title": "Compound interest",
+    "latex": "A=P\\left(1+\\frac{r}{n}\\right)^{nt}",
+    "desc": "Formula for compound interest.",
+    "topic": "Financial Maths",
+    "level": "Year 11"
+  },
+  {
+    "id": 165,
+    "title": "Annual compounding",
+    "latex": "A=P(1+r)^t",
+    "desc": "Formula for annual compounding.",
+    "topic": "Financial Maths",
+    "level": "Year 11"
+  },
+  {
+    "id": 166,
+    "title": "Continuous compounding",
+    "latex": "A=Pe^{rt}",
+    "desc": "Formula for continuous compounding.",
+    "topic": "Financial Maths",
+    "level": "Year 12"
+  },
+  {
+    "id": 167,
+    "title": "Logarithm definition",
+    "latex": "\\log_a N=x\\iff a^x=N",
+    "desc": "Definition used in logarithms.",
+    "topic": "Logarithms",
+    "level": "Year 11"
+  },
+  {
+    "id": 168,
+    "title": "Common logarithm",
+    "latex": "\\log N=\\log_{10}N",
+    "desc": "Formula for common logarithm.",
+    "topic": "Logarithms",
+    "level": "Year 11"
+  },
+  {
+    "id": 169,
+    "title": "Natural logarithm",
+    "latex": "\\ln x=\\log_e x",
+    "desc": "Formula for natural logarithm.",
+    "topic": "Logarithms",
+    "level": "Year 11"
+  },
+  {
+    "id": 170,
+    "title": "Log product law",
+    "latex": "\\log_a(xy)=\\log_a x+\\log_a y",
+    "desc": "Standard law used in logarithms.",
+    "topic": "Logarithms",
+    "level": "Year 11"
+  },
+  {
+    "id": 171,
+    "title": "Log quotient law",
+    "latex": "\\log_a\\left(\\frac{x}{y}\\right)=\\log_a x-\\log_a y",
+    "desc": "Standard law used in logarithms.",
+    "topic": "Logarithms",
+    "level": "Year 11"
+  },
+  {
+    "id": 172,
+    "title": "Log power law",
+    "latex": "\\log_a(x^n)=n\\log_a x",
+    "desc": "Standard law used in logarithms.",
+    "topic": "Logarithms",
+    "level": "Year 11"
+  },
+  {
+    "id": 173,
+    "title": "Change of base",
+    "latex": "\\log_a x=\\frac{\\log_b x}{\\log_b a}",
+    "desc": "Formula for change of base.",
+    "topic": "Logarithms",
+    "level": "Year 11"
+  },
+  {
+    "id": 174,
+    "title": "Exponential-log inverse",
+    "latex": "a^{\\log_a x}=x",
+    "desc": "Formula for exponential-log inverse.",
+    "topic": "Logarithms",
+    "level": "Year 11"
+  },
+  {
+    "id": 175,
+    "title": "Natural exponential inverse",
+    "latex": "e^{\\ln x}=x",
+    "desc": "Formula for natural exponential inverse.",
+    "topic": "Logarithms",
+    "level": "Year 11"
+  },
+  {
+    "id": 176,
+    "title": "Natural log inverse",
+    "latex": "\\ln(e^x)=x",
+    "desc": "Formula for natural log inverse.",
+    "topic": "Logarithms",
+    "level": "Year 11"
+  },
+  {
+    "id": 177,
+    "title": "Arithmetic sequence nth term",
+    "latex": "u_n=a+(n-1)d",
+    "desc": "Formula for arithmetic sequence nth term.",
+    "topic": "Sequences",
+    "level": "Year 10"
+  },
+  {
+    "id": 178,
+    "title": "Arithmetic sequence sum",
+    "latex": "S_n=\\frac{n}{2}[2a+(n-1)d]",
+    "desc": "Formula for arithmetic sequence sum.",
+    "topic": "Sequences",
+    "level": "Year 10"
+  },
+  {
+    "id": 179,
+    "title": "Arithmetic sequence sum alt",
+    "latex": "S_n=\\frac{n}{2}(a+l)",
+    "desc": "Formula for arithmetic sequence sum alt.",
+    "topic": "Sequences",
+    "level": "Year 10"
+  },
+  {
+    "id": 180,
+    "title": "Geometric sequence nth term",
+    "latex": "u_n=ar^{n-1}",
+    "desc": "Formula for geometric sequence nth term.",
+    "topic": "Sequences",
+    "level": "Year 10"
+  },
+  {
+    "id": 181,
+    "title": "Geometric sequence sum",
+    "latex": "S_n=a\\frac{1-r^n}{1-r}",
+    "desc": "Formula for geometric sequence sum.",
+    "topic": "Sequences",
+    "level": "Year 10"
+  },
+  {
+    "id": 182,
+    "title": "Infinite geometric sum",
+    "latex": "S_\\infty=\\frac{a}{1-r}",
+    "desc": "Formula for infinite geometric sum.",
+    "topic": "Sequences",
+    "level": "Year 11"
+  },
+  {
+    "id": 183,
+    "title": "Recursive arithmetic sequence",
+    "latex": "u_{n+1}=u_n+d",
+    "desc": "Formula for recursive arithmetic sequence.",
+    "topic": "Sequences",
+    "level": "Year 10"
+  },
+  {
+    "id": 184,
+    "title": "Recursive geometric sequence",
+    "latex": "u_{n+1}=ru_n",
+    "desc": "Formula for recursive geometric sequence.",
+    "topic": "Sequences",
+    "level": "Year 10"
+  },
+  {
+    "id": 185,
+    "title": "Sigma notation arithmetic",
+    "latex": "\\sum_{k=1}^{n}k=\\frac{n(n+1)}{2}",
+    "desc": "Formula for sigma notation arithmetic.",
+    "topic": "Sequences",
+    "level": "Year 11"
+  },
+  {
+    "id": 186,
+    "title": "Sum of squares",
+    "latex": "\\sum_{k=1}^{n}k^2=\\frac{n(n+1)(2n+1)}{6}",
+    "desc": "Formula for sum of squares.",
+    "topic": "Sequences",
+    "level": "Year 11"
+  },
+  {
+    "id": 187,
+    "title": "Sum of cubes",
+    "latex": "\\sum_{k=1}^{n}k^3=\\left[\\frac{n(n+1)}{2}\\right]^2",
+    "desc": "Formula for sum of cubes.",
+    "topic": "Sequences",
+    "level": "Year 11"
+  },
+  {
+    "id": 188,
+    "title": "Binomial theorem n choose r",
+    "latex": "{n\\choose r}=\\frac{n!}{r!(n-r)!}",
+    "desc": "Formula for binomial theorem n choose r.",
+    "topic": "Algebra",
+    "level": "Year 11"
+  },
+  {
+    "id": 189,
+    "title": "Factorial",
+    "latex": "n!=n(n-1)(n-2)\\cdots 2\\cdot1",
+    "desc": "Formula for factorial.",
+    "topic": "Algebra",
+    "level": "Year 11"
+  },
+  {
+    "id": 190,
+    "title": "Binomial expansion",
+    "latex": "(a+b)^n=\\sum_{r=0}^{n}{n\\choose r}a^{n-r}b^r",
+    "desc": "Formula for binomial expansion.",
+    "topic": "Algebra",
+    "level": "Year 11"
+  },
+  {
+    "id": 191,
+    "title": "General term in binomial",
+    "latex": "T_{r+1}={n\\choose r}a^{n-r}b^r",
+    "desc": "General solution or general form for term in binomial.",
+    "topic": "Algebra",
+    "level": "Year 11"
+  },
+  {
+    "id": 192,
+    "title": "Remainder theorem",
+    "latex": "\\text{remainder of }f(x)\\text{ by }(x-a)=f(a)",
+    "desc": "Formula for remainder theorem.",
+    "topic": "Algebra",
+    "level": "Year 11"
+  },
+  {
+    "id": 193,
+    "title": "Factor theorem",
+    "latex": "f(a)=0\\Rightarrow (x-a)\\text{ is a factor}",
+    "desc": "Formula for factor theorem.",
+    "topic": "Algebra",
+    "level": "Year 11"
+  },
+  {
+    "id": 194,
+    "title": "Cubic standard form",
+    "latex": "ax^3+bx^2+cx+d",
+    "desc": "Formula for cubic standard form.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 195,
+    "title": "Polynomial degree",
+    "latex": "\\deg(fg)=\\deg f+\\deg g",
+    "desc": "Formula for polynomial degree.",
+    "topic": "Algebra",
+    "level": "Year 11"
+  },
+  {
+    "id": 196,
+    "title": "Rational function",
+    "latex": "f(x)=\\frac{p(x)}{q(x)}",
+    "desc": "Formula for rational function.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 197,
+    "title": "Hyperbola",
+    "latex": "y=\\frac{a}{x}+q",
+    "desc": "Formula for hyperbola.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 198,
+    "title": "Circle equation",
+    "latex": "(x-h)^2+(y-k)^2=r^2",
+    "desc": "Formula for circle equation.",
+    "topic": "Coordinate Geometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 199,
+    "title": "Circle at origin",
+    "latex": "x^2+y^2=r^2",
+    "desc": "Formula for circle at origin.",
+    "topic": "Coordinate Geometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 200,
+    "title": "General circle form",
+    "latex": "x^2+y^2+2gx+2fy+c=0",
+    "desc": "General solution or general form for circle form.",
+    "topic": "Coordinate Geometry",
+    "level": "Year 11"
+  },
+  {
+    "id": 201,
+    "title": "Domain restriction sqrt",
+    "latex": "x\\ge 0",
+    "desc": "Common restriction used in functions.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 202,
+    "title": "Domain restriction log",
+    "latex": "x>0",
+    "desc": "Common restriction used in functions.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 203,
+    "title": "Range of sine",
+    "latex": "-1\\le\\sin x\\le1",
+    "desc": "Formula for range of sine.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 204,
+    "title": "Range of cosine",
+    "latex": "-1\\le\\cos x\\le1",
+    "desc": "Formula for range of cosine.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 205,
+    "title": "Asymptotes of tangent",
+    "latex": "x=\\frac{\\pi}{2}+n\\pi",
+    "desc": "Formula for asymptotes of tangent.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 206,
+    "title": "Hyperbola asymptotes",
+    "latex": "x=0,\\ y=q",
+    "desc": "Formula for hyperbola asymptotes.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 207,
+    "title": "Transformation horizontal stretch",
+    "latex": "y=f(kx)",
+    "desc": "Formula for transformation horizontal stretch.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 208,
+    "title": "Transformation vertical stretch",
+    "latex": "y=af(x)",
+    "desc": "Formula for transformation vertical stretch.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 209,
+    "title": "Reflection in x-axis",
+    "latex": "y=-f(x)",
+    "desc": "Formula for reflection in x-axis.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 210,
+    "title": "Reflection in y-axis",
+    "latex": "y=f(-x)",
+    "desc": "Formula for reflection in y-axis.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 211,
+    "title": "Horizontal shift",
+    "latex": "y=f(x-h)",
+    "desc": "Formula for horizontal shift.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 212,
+    "title": "Vertical shift formula",
+    "latex": "y=f(x)+k",
+    "desc": "Standard formula for vertical shift formula.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 213,
+    "title": "Piecewise function",
+    "latex": "f(x)=\\begin{cases}...\\end{cases}",
+    "desc": "Formula for piecewise function.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 214,
+    "title": "Average rate of change",
+    "latex": "\\frac{f(b)-f(a)}{b-a}",
+    "desc": "Formula for average rate of change.",
+    "topic": "Functions",
+    "level": "Year 11"
+  },
+  {
+    "id": 215,
+    "title": "Gradient-intercept relation",
+    "latex": "c=y-mx",
+    "desc": "Formula for gradient-intercept relation.",
+    "topic": "Coordinate Geometry",
+    "level": "Year 10"
+  },
+  {
+    "id": 216,
+    "title": "Equation of horizontal line",
+    "latex": "y=k",
+    "desc": "Formula for equation of horizontal line.",
+    "topic": "Coordinate Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 217,
+    "title": "Equation of vertical line",
+    "latex": "x=h",
+    "desc": "Formula for equation of vertical line.",
+    "topic": "Coordinate Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 218,
+    "title": "Probability formula",
+    "latex": "P(E)=\\frac{\\text{number of favourable outcomes}}{\\text{number of possible outcomes}}",
+    "desc": "Standard formula for probability formula.",
+    "topic": "Probability",
+    "level": "Year 9"
+  },
+  {
+    "id": 219,
+    "title": "Probability bounds",
+    "latex": "0\\le P(E)\\le 1",
+    "desc": "Probability formula used in probability.",
+    "topic": "Probability",
+    "level": "Year 9"
+  },
+  {
+    "id": 220,
+    "title": "Complement rule",
+    "latex": "P(E')=1-P(E)",
+    "desc": "Standard rule used in probability.",
+    "topic": "Probability",
+    "level": "Year 9"
+  },
+  {
+    "id": 221,
+    "title": "Addition rule",
+    "latex": "P(A\\cup B)=P(A)+P(B)-P(A\\cap B)",
+    "desc": "Standard rule used in probability.",
+    "topic": "Probability",
+    "level": "Year 10"
+  },
+  {
+    "id": 222,
+    "title": "Mutually exclusive events",
+    "latex": "P(A\\cup B)=P(A)+P(B)",
+    "desc": "Formula for mutually exclusive events.",
+    "topic": "Probability",
+    "level": "Year 10"
+  },
+  {
+    "id": 223,
+    "title": "Independent events",
+    "latex": "P(A\\cap B)=P(A)P(B)",
+    "desc": "Formula for independent events.",
+    "topic": "Probability",
+    "level": "Year 10"
+  },
+  {
+    "id": 224,
+    "title": "Conditional probability",
+    "latex": "P(A|B)=\\frac{P(A\\cap B)}{P(B)}",
+    "desc": "Probability formula used in probability.",
+    "topic": "Probability",
+    "level": "Year 11"
+  },
+  {
+    "id": 225,
+    "title": "Multiplication rule",
+    "latex": "P(A\\cap B)=P(A)P(B|A)",
+    "desc": "Standard rule used in probability.",
+    "topic": "Probability",
+    "level": "Year 11"
+  },
+  {
+    "id": 226,
+    "title": "Expected value",
+    "latex": "E(X)=\\sum xP(X=x)",
+    "desc": "Formula for expected value.",
+    "topic": "Probability",
+    "level": "Year 11"
+  },
+  {
+    "id": 227,
+    "title": "Variance definition discrete",
+    "latex": "\\mathrm{Var}(X)=\\sum (x-\\mu)^2P(X=x)",
+    "desc": "Definition used in probability.",
+    "topic": "Probability",
+    "level": "Year 11"
+  },
+  {
+    "id": 228,
+    "title": "Variance shortcut",
+    "latex": "\\mathrm{Var}(X)=E(X^2)-[E(X)]^2",
+    "desc": "Formula for variance shortcut.",
+    "topic": "Probability",
+    "level": "Year 11"
+  },
+  {
+    "id": 229,
+    "title": "Standard deviation",
+    "latex": "\\sigma=\\sqrt{\\mathrm{Var}(X)}",
+    "desc": "Formula for standard deviation.",
+    "topic": "Statistics",
+    "level": "Year 10"
+  },
+  {
+    "id": 230,
+    "title": "Sample mean",
+    "latex": "\\bar{x}=\\frac{1}{n}\\sum_{i=1}^{n}x_i",
+    "desc": "Formula related to sample mean.",
+    "topic": "Statistics",
+    "level": "Year 10"
+  },
+  {
+    "id": 231,
+    "title": "Population mean",
+    "latex": "\\mu=\\frac{1}{N}\\sum_{i=1}^{N}x_i",
+    "desc": "Formula related to population mean.",
+    "topic": "Statistics",
+    "level": "Year 11"
+  },
+  {
+    "id": 232,
+    "title": "Population variance",
+    "latex": "\\sigma^2=\\frac{1}{N}\\sum_{i=1}^{N}(x_i-\\mu)^2",
+    "desc": "Formula for population variance.",
+    "topic": "Statistics",
+    "level": "Year 11"
+  },
+  {
+    "id": 233,
+    "title": "Sample variance",
+    "latex": "s^2=\\frac{1}{n-1}\\sum_{i=1}^{n}(x_i-\\bar{x})^2",
+    "desc": "Formula for sample variance.",
+    "topic": "Statistics",
+    "level": "Year 11"
+  },
+  {
+    "id": 234,
+    "title": "Sample standard deviation",
+    "latex": "s=\\sqrt{\\frac{1}{n-1}\\sum_{i=1}^{n}(x_i-\\bar{x})^2}",
+    "desc": "Formula for sample standard deviation.",
+    "topic": "Statistics",
+    "level": "Year 11"
+  },
+  {
+    "id": 235,
+    "title": "Z-score",
+    "latex": "z=\\frac{x-\\mu}{\\sigma}",
+    "desc": "Formula for z-score.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 236,
+    "title": "Range",
+    "latex": "\\text{range}=\\text{max}-\\text{min}",
+    "desc": "Formula for range.",
+    "topic": "Statistics",
+    "level": "Year 9"
+  },
+  {
+    "id": 237,
+    "title": "Interquartile range",
+    "latex": "\\mathrm{IQR}=Q_3-Q_1",
+    "desc": "Formula for interquartile range.",
+    "topic": "Statistics",
+    "level": "Year 10"
+  },
+  {
+    "id": 238,
+    "title": "Outlier fences lower",
+    "latex": "Q_1-1.5\\times \\mathrm{IQR}",
+    "desc": "Formula for outlier fences lower.",
+    "topic": "Statistics",
+    "level": "Year 10"
+  },
+  {
+    "id": 239,
+    "title": "Outlier fences upper",
+    "latex": "Q_3+1.5\\times \\mathrm{IQR}",
+    "desc": "Formula for outlier fences upper.",
+    "topic": "Statistics",
+    "level": "Year 10"
+  },
+  {
+    "id": 240,
+    "title": "Median position odd",
+    "latex": "\\frac{n+1}{2}",
+    "desc": "Formula related to median position odd.",
+    "topic": "Statistics",
+    "level": "Year 9"
+  },
+  {
+    "id": 241,
+    "title": "Quartile positions",
+    "latex": "Q_1,Q_2,Q_3",
+    "desc": "Formula for quartile positions.",
+    "topic": "Statistics",
+    "level": "Year 9"
+  },
+  {
+    "id": 242,
+    "title": "Relative frequency",
+    "latex": "\\text{relative frequency}=\\frac{\\text{frequency}}{\\text{total}}",
+    "desc": "Formula for relative frequency.",
+    "topic": "Statistics",
+    "level": "Year 9"
+  },
+  {
+    "id": 243,
+    "title": "Weighted mean",
+    "latex": "\\bar{x}_w=\\frac{\\sum wx}{\\sum w}",
+    "desc": "Formula related to weighted mean.",
+    "topic": "Statistics",
+    "level": "Year 10"
+  },
+  {
+    "id": 244,
+    "title": "Mean from frequency table",
+    "latex": "\\bar{x}=\\frac{\\sum fx}{\\sum f}",
+    "desc": "Formula related to mean from frequency table.",
+    "topic": "Statistics",
+    "level": "Year 10"
+  },
+  {
+    "id": 245,
+    "title": "Variance from frequency table",
+    "latex": "\\sigma^2=\\frac{\\sum f(x-\\mu)^2}{\\sum f}",
+    "desc": "Formula for variance from frequency table.",
+    "topic": "Statistics",
+    "level": "Year 11"
+  },
+  {
+    "id": 246,
+    "title": "Binomial probability",
+    "latex": "P(X=r)={n\\choose r}p^r(1-p)^{n-r}",
+    "desc": "Probability formula used in probability.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 247,
+    "title": "Binomial mean",
+    "latex": "\\mu=np",
+    "desc": "Formula related to binomial mean.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 248,
+    "title": "Binomial variance",
+    "latex": "\\sigma^2=np(1-p)",
+    "desc": "Formula for binomial variance.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 249,
+    "title": "Normal distribution density",
+    "latex": "f(x)=\\frac{1}{\\sigma\\sqrt{2\\pi}}e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}",
+    "desc": "Formula for normal distribution density.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 250,
+    "title": "Empirical rule 68",
+    "latex": "P(\\mu-\\sigma<X<\\mu+\\sigma)\\approx0.68",
+    "desc": "Standard rule used in statistics.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 251,
+    "title": "Empirical rule 95",
+    "latex": "P(\\mu-2\\sigma<X<\\mu+2\\sigma)\\approx0.95",
+    "desc": "Standard rule used in statistics.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 252,
+    "title": "Empirical rule 99.7",
+    "latex": "P(\\mu-3\\sigma<X<\\mu+3\\sigma)\\approx0.997",
+    "desc": "Standard rule used in statistics.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 253,
+    "title": "Permutation nPr",
+    "latex": "{}^nP_r=\\frac{n!}{(n-r)!}",
+    "desc": "Formula for permutation nPr.",
+    "topic": "Probability",
+    "level": "Year 11"
+  },
+  {
+    "id": 254,
+    "title": "Combination nCr",
+    "latex": "{}^nC_r=\\frac{n!}{r!(n-r)!}",
+    "desc": "Formula for combination nCr.",
+    "topic": "Probability",
+    "level": "Year 11"
+  },
+  {
+    "id": 255,
+    "title": "Probability not A and B",
+    "latex": "P(A'\\cap B)=P(B)-P(A\\cap B)",
+    "desc": "Probability formula used in probability.",
+    "topic": "Probability",
+    "level": "Year 11"
+  },
+  {
+    "id": 256,
+    "title": "Union bound simple",
+    "latex": "P(A\\cup B)\\le P(A)+P(B)",
+    "desc": "Formula for union bound simple.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 257,
+    "title": "Law of total probability",
+    "latex": "P(B)=P(B|A)P(A)+P(B|A')P(A')",
+    "desc": "Standard law used in probability.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 258,
+    "title": "Bayes theorem",
+    "latex": "P(A|B)=\\frac{P(B|A)P(A)}{P(B)}",
+    "desc": "Formula for bayes theorem.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 259,
+    "title": "Expected value linearity",
+    "latex": "E(aX+b)=aE(X)+b",
+    "desc": "Formula for expected value linearity.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 260,
+    "title": "Variance scaling",
+    "latex": "\\mathrm{Var}(aX+b)=a^2\\mathrm{Var}(X)",
+    "desc": "Formula for variance scaling.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 261,
+    "title": "Covariance definition",
+    "latex": "\\mathrm{Cov}(X,Y)=E(XY)-E(X)E(Y)",
+    "desc": "Definition used in probability.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 262,
+    "title": "Independent covariance",
+    "latex": "X\\perp Y\\Rightarrow \\mathrm{Cov}(X,Y)=0",
+    "desc": "Formula for independent covariance.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 263,
+    "title": "Correlation coefficient",
+    "latex": "r=\\frac{\\mathrm{Cov}(X,Y)}{\\sigma_X\\sigma_Y}",
+    "desc": "Formula for correlation coefficient.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 264,
+    "title": "Least squares line",
+    "latex": "\\hat{y}=a+bx",
+    "desc": "Formula for least squares line.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 265,
+    "title": "Regression slope",
+    "latex": "b=r\\frac{s_y}{s_x}",
+    "desc": "Formula for regression slope.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 266,
+    "title": "Regression intercept",
+    "latex": "a=\\bar{y}-b\\bar{x}",
+    "desc": "Formula for regression intercept.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 267,
+    "title": "Residual",
+    "latex": "e=y-\\hat{y}",
+    "desc": "Formula for residual.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 268,
+    "title": "Coefficient of determination",
+    "latex": "R^2=r^2",
+    "desc": "Formula for coefficient of determination.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 269,
+    "title": "Probability from tree path",
+    "latex": "P(\\text{path})=\\text{product of branch probabilities}",
+    "desc": "Probability formula used in probability.",
+    "topic": "Probability",
+    "level": "Year 10"
+  },
+  {
+    "id": 270,
+    "title": "Relative risk",
+    "latex": "\\text{RR}=\\frac{P(\\text{event|exposed})}{P(\\text{event|not exposed})}",
+    "desc": "Formula for relative risk.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 271,
+    "title": "Odds",
+    "latex": "\\text{odds in favour}=\\frac{p}{1-p}",
+    "desc": "Formula for odds.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 272,
+    "title": "Odds to probability",
+    "latex": "p=\\frac{\\text{odds}}{1+\\text{odds}}",
+    "desc": "Probability formula used in probability.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 273,
+    "title": "Margin of error idea",
+    "latex": "\\text{estimate}\\pm\\text{margin of error}",
+    "desc": "Key idea related to margin of error idea.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 274,
+    "title": "Population proportion",
+    "latex": "\\hat{p}=\\frac{x}{n}",
+    "desc": "Formula for population proportion.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 275,
+    "title": "Two-way table total",
+    "latex": "\\text{row total} + \\text{...}",
+    "desc": "Formula for two-way table total.",
+    "topic": "Statistics",
+    "level": "Year 9"
+  },
+  {
+    "id": 276,
+    "title": "Frequency density",
+    "latex": "\\text{frequency density}=\\frac{\\text{frequency}}{\\text{class width}}",
+    "desc": "Formula for frequency density.",
+    "topic": "Statistics",
+    "level": "Year 10"
+  },
+  {
+    "id": 277,
+    "title": "Class midpoint",
+    "latex": "\\text{midpoint}=\\frac{\\text{lower} + \\text{upper}}{2}",
+    "desc": "Formula for class midpoint.",
+    "topic": "Statistics",
+    "level": "Year 10"
+  },
+  {
+    "id": 278,
+    "title": "Mean from class midpoints",
+    "latex": "\\bar{x}\\approx\\frac{\\sum fm}{\\sum f}",
+    "desc": "Formula related to mean from class midpoints.",
+    "topic": "Statistics",
+    "level": "Year 10"
+  },
+  {
+    "id": 279,
+    "title": "Percentile rank idea",
+    "latex": "\\text{percentile}=\\%\\text{ below a value}",
+    "desc": "Key idea related to percentile rank idea.",
+    "topic": "Statistics",
+    "level": "Year 10"
+  },
+  {
+    "id": 280,
+    "title": "Standardised residual",
+    "latex": "\\frac{e}{s}",
+    "desc": "Formula for standardised residual.",
+    "topic": "Statistics",
+    "level": "Year 12"
+  },
+  {
+    "id": 281,
+    "title": "Limit notation",
+    "latex": "\\lim_{x\\to a}f(x)",
+    "desc": "Formula for limit notation.",
+    "topic": "Calculus",
+    "level": "Year 11"
+  },
+  {
+    "id": 282,
+    "title": "Derivative definition",
+    "latex": "f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}",
+    "desc": "Definition used in calculus.",
+    "topic": "Calculus",
+    "level": "Year 11"
+  },
+  {
+    "id": 283,
+    "title": "Derivative notation",
+    "latex": "\\frac{dy}{dx}",
+    "desc": "Formula for derivative notation.",
+    "topic": "Calculus",
+    "level": "Year 11"
+  },
+  {
+    "id": 284,
+    "title": "Power rule",
+    "latex": "\\frac{d}{dx}(x^n)=nx^{n-1}",
+    "desc": "Standard rule used in calculus.",
+    "topic": "Calculus",
+    "level": "Year 11"
+  },
+  {
+    "id": 285,
+    "title": "Constant rule",
+    "latex": "\\frac{d}{dx}(c)=0",
+    "desc": "Standard rule used in calculus.",
+    "topic": "Calculus",
+    "level": "Year 11"
+  },
+  {
+    "id": 286,
+    "title": "Constant multiple rule",
+    "latex": "\\frac{d}{dx}[cf(x)]=cf'(x)",
+    "desc": "Standard rule used in calculus.",
+    "topic": "Calculus",
+    "level": "Year 11"
+  },
+  {
+    "id": 287,
+    "title": "Sum rule",
+    "latex": "\\frac{d}{dx}[f(x)+g(x)]=f'(x)+g'(x)",
+    "desc": "Standard rule used in calculus.",
+    "topic": "Calculus",
+    "level": "Year 11"
+  },
+  {
+    "id": 288,
+    "title": "Difference rule",
+    "latex": "\\frac{d}{dx}[f(x)-g(x)]=f'(x)-g'(x)",
+    "desc": "Standard rule used in calculus.",
+    "topic": "Calculus",
+    "level": "Year 11"
+  },
+  {
+    "id": 289,
+    "title": "Product rule",
+    "latex": "\\frac{d}{dx}[uv]=u\\frac{dv}{dx}+v\\frac{du}{dx}",
+    "desc": "Standard rule used in calculus.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 290,
+    "title": "Quotient rule",
+    "latex": "\\frac{d}{dx}\\left(\\frac{u}{v}\\right)=\\frac{v\\frac{du}{dx}-u\\frac{dv}{dx}}{v^2}",
+    "desc": "Standard rule used in calculus.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 291,
+    "title": "Chain rule",
+    "latex": "\\frac{d}{dx}f(g(x))=f'(g(x))g'(x)",
+    "desc": "Standard rule used in calculus.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 292,
+    "title": "Derivative of e^x",
+    "latex": "\\frac{d}{dx}(e^x)=e^x",
+    "desc": "Formula for derivative of e^x.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 293,
+    "title": "Derivative of a^x",
+    "latex": "\\frac{d}{dx}(a^x)=a^x\\ln a",
+    "desc": "Formula for derivative of a^x.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 294,
+    "title": "Derivative of ln x",
+    "latex": "\\frac{d}{dx}(\\ln x)=\\frac{1}{x}",
+    "desc": "Formula for derivative of ln x.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 295,
+    "title": "Derivative of log_a x",
+    "latex": "\\frac{d}{dx}(\\log_a x)=\\frac{1}{x\\ln a}",
+    "desc": "Formula for derivative of log_a x.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 296,
+    "title": "Derivative of sin x",
+    "latex": "\\frac{d}{dx}(\\sin x)=\\cos x",
+    "desc": "Formula for derivative of sin x.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 297,
+    "title": "Derivative of cos x",
+    "latex": "\\frac{d}{dx}(\\cos x)=-\\sin x",
+    "desc": "Formula for derivative of cos x.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 298,
+    "title": "Derivative of tan x",
+    "latex": "\\frac{d}{dx}(\\tan x)=\\sec^2 x",
+    "desc": "Formula for derivative of tan x.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 299,
+    "title": "Second derivative",
+    "latex": "\\frac{d^2y}{dx^2}",
+    "desc": "Formula for second derivative.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 300,
+    "title": "Stationary point condition",
+    "latex": "f'(x)=0",
+    "desc": "Formula for stationary point condition.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 301,
+    "title": "Point of inflection idea",
+    "latex": "f''(x)=0",
+    "desc": "Key idea related to point of inflection idea.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 302,
+    "title": "Increasing function",
+    "latex": "f'(x)>0",
+    "desc": "Formula for increasing function.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 303,
+    "title": "Decreasing function",
+    "latex": "f'(x)<0",
+    "desc": "Formula for decreasing function.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 304,
+    "title": "Local minimum test",
+    "latex": "f'(x)=0,\\ f''(x)>0",
+    "desc": "Formula for local minimum test.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 305,
+    "title": "Local maximum test",
+    "latex": "f'(x)=0,\\ f''(x)<0",
+    "desc": "Formula for local maximum test.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 306,
+    "title": "Normal gradient",
+    "latex": "m_{\\text{normal}}=-\\frac{1}{m_{\\text{tangent}}}",
+    "desc": "Formula for normal gradient.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 307,
+    "title": "Equation of tangent",
+    "latex": "y-y_1=f'(x_1)(x-x_1)",
+    "desc": "Formula for equation of tangent.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 308,
+    "title": "Equation of normal",
+    "latex": "y-y_1=-\\frac{1}{f'(x_1)}(x-x_1)",
+    "desc": "Formula for equation of normal.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 309,
+    "title": "Antiderivative notation",
+    "latex": "\\int f(x)\\,dx",
+    "desc": "Formula for antiderivative notation.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 310,
+    "title": "Integral of power",
+    "latex": "\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C",
+    "desc": "Formula for integral of power.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 311,
+    "title": "Integral of reciprocal",
+    "latex": "\\int \\frac{1}{x}\\,dx=\\ln|x|+C",
+    "desc": "Formula for integral of reciprocal.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 312,
+    "title": "Integral of e^x",
+    "latex": "\\int e^x\\,dx=e^x+C",
+    "desc": "Formula for integral of e^x.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 313,
+    "title": "Integral of sin x",
+    "latex": "\\int \\sin x\\,dx=-\\cos x+C",
+    "desc": "Formula for integral of sin x.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 314,
+    "title": "Integral of cos x",
+    "latex": "\\int \\cos x\\,dx=\\sin x+C",
+    "desc": "Formula for integral of cos x.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 315,
+    "title": "Definite integral",
+    "latex": "\\int_a^b f(x)\\,dx",
+    "desc": "Formula for definite integral.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 316,
+    "title": "Fundamental theorem",
+    "latex": "\\int_a^b f(x)\\,dx=F(b)-F(a)",
+    "desc": "Formula for fundamental theorem.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 317,
+    "title": "Area under curve",
+    "latex": "A=\\int_a^b f(x)\\,dx",
+    "desc": "Formula for area under curve.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 318,
+    "title": "Area between curves",
+    "latex": "A=\\int_a^b [f(x)-g(x)]\\,dx",
+    "desc": "Formula for area between curves.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 319,
+    "title": "Average value of function",
+    "latex": "f_{\\text{avg}}=\\frac{1}{b-a}\\int_a^b f(x)\\,dx",
+    "desc": "Formula for average value of function.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 320,
+    "title": "Kinematics velocity",
+    "latex": "v=\\frac{ds}{dt}",
+    "desc": "Formula for kinematics velocity.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 321,
+    "title": "Kinematics acceleration",
+    "latex": "a=\\frac{dv}{dt}=\\frac{d^2s}{dt^2}",
+    "desc": "Formula for kinematics acceleration.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 322,
+    "title": "Displacement from velocity",
+    "latex": "s=\\int v\\,dt",
+    "desc": "Formula for displacement from velocity.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 323,
+    "title": "Velocity from acceleration",
+    "latex": "v=\\int a\\,dt",
+    "desc": "Formula for velocity from acceleration.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 324,
+    "title": "Vector magnitude in 2D",
+    "latex": "|\\mathbf{a}|=\\sqrt{x^2+y^2}",
+    "desc": "Formula for vector magnitude in 2D.",
+    "topic": "Vectors",
+    "level": "Year 11"
+  },
+  {
+    "id": 325,
+    "title": "Vector magnitude in 3D",
+    "latex": "|\\mathbf{a}|=\\sqrt{x^2+y^2+z^2}",
+    "desc": "Formula for vector magnitude in 3D.",
+    "topic": "Vectors",
+    "level": "Year 12"
+  },
+  {
+    "id": 326,
+    "title": "Vector addition",
+    "latex": "\\mathbf{a}+\\mathbf{b}=(x_1+x_2,\\ y_1+y_2)",
+    "desc": "Formula for vector addition.",
+    "topic": "Vectors",
+    "level": "Year 11"
+  },
+  {
+    "id": 327,
+    "title": "Vector subtraction",
+    "latex": "\\mathbf{a}-\\mathbf{b}=(x_1-x_2,\\ y_1-y_2)",
+    "desc": "Formula for vector subtraction.",
+    "topic": "Vectors",
+    "level": "Year 11"
+  },
+  {
+    "id": 328,
+    "title": "Scalar multiplication",
+    "latex": "k\\mathbf{a}=(kx,ky)",
+    "desc": "Formula for scalar multiplication.",
+    "topic": "Vectors",
+    "level": "Year 11"
+  },
+  {
+    "id": 329,
+    "title": "Position vector",
+    "latex": "\\overrightarrow{OP}=\\langle x,y\\rangle",
+    "desc": "Formula for position vector.",
+    "topic": "Vectors",
+    "level": "Year 11"
+  },
+  {
+    "id": 330,
+    "title": "Vector between points",
+    "latex": "\\overrightarrow{AB}=\\langle x_2-x_1,\\ y_2-y_1\\rangle",
+    "desc": "Formula for vector between points.",
+    "topic": "Vectors",
+    "level": "Year 11"
+  },
+  {
+    "id": 331,
+    "title": "Dot product",
+    "latex": "\\mathbf{a}\\cdot\\mathbf{b}=a_xb_x+a_yb_y",
+    "desc": "Formula for dot product.",
+    "topic": "Vectors",
+    "level": "Year 12"
+  },
+  {
+    "id": 332,
+    "title": "Dot product with angle",
+    "latex": "\\mathbf{a}\\cdot\\mathbf{b}=|\\mathbf{a}||\\mathbf{b}|\\cos\\theta",
+    "desc": "Formula for dot product with angle.",
+    "topic": "Vectors",
+    "level": "Year 12"
+  },
+  {
+    "id": 333,
+    "title": "Perpendicular vectors",
+    "latex": "\\mathbf{a}\\cdot\\mathbf{b}=0",
+    "desc": "Formula for perpendicular vectors.",
+    "topic": "Vectors",
+    "level": "Year 12"
+  },
+  {
+    "id": 334,
+    "title": "Projection formula",
+    "latex": "\\mathrm{proj}_{\\mathbf{b}}\\mathbf{a}=\\frac{\\mathbf{a}\\cdot\\mathbf{b}}{|\\mathbf{b}|^2}\\mathbf{b}",
+    "desc": "Standard formula for projection formula.",
+    "topic": "Vectors",
+    "level": "Year 12"
+  },
+  {
+    "id": 335,
+    "title": "Parametric line vector form",
+    "latex": "\\mathbf{r}=\\mathbf{a}+t\\mathbf{b}",
+    "desc": "Formula for parametric line vector form.",
+    "topic": "Vectors",
+    "level": "Year 12"
+  },
+  {
+    "id": 336,
+    "title": "Complex number",
+    "latex": "z=a+bi",
+    "desc": "Formula for complex number.",
+    "topic": "Complex Numbers",
+    "level": "Year 12"
+  },
+  {
+    "id": 337,
+    "title": "Imaginary unit",
+    "latex": "i^2=-1",
+    "desc": "Formula for imaginary unit.",
+    "topic": "Complex Numbers",
+    "level": "Year 12"
+  },
+  {
+    "id": 338,
+    "title": "Complex conjugate",
+    "latex": "\\bar{z}=a-bi",
+    "desc": "Formula for complex conjugate.",
+    "topic": "Complex Numbers",
+    "level": "Year 12"
+  },
+  {
+    "id": 339,
+    "title": "Modulus of complex number",
+    "latex": "|z|=\\sqrt{a^2+b^2}",
+    "desc": "Formula for modulus of complex number.",
+    "topic": "Complex Numbers",
+    "level": "Year 12"
+  },
+  {
+    "id": 340,
+    "title": "Argument form",
+    "latex": "z=r(\\cos\\theta+i\\sin\\theta)",
+    "desc": "Formula for argument form.",
+    "topic": "Complex Numbers",
+    "level": "Year 12"
+  },
+  {
+    "id": 341,
+    "title": "Euler form",
+    "latex": "z=re^{i\\theta}",
+    "desc": "Formula for euler form.",
+    "topic": "Complex Numbers",
+    "level": "Year 12"
+  },
+  {
+    "id": 342,
+    "title": "Euler identity",
+    "latex": "e^{i\\theta}=\\cos\\theta+i\\sin\\theta",
+    "desc": "Standard identity used in complex numbers.",
+    "topic": "Complex Numbers",
+    "level": "Year 12"
+  },
+  {
+    "id": 343,
+    "title": "De Moivre theorem",
+    "latex": "[r(\\cos\\theta+i\\sin\\theta)]^n=r^n[\\cos(n\\theta)+i\\sin(n\\theta)]",
+    "desc": "Formula for de Moivre theorem.",
+    "topic": "Complex Numbers",
+    "level": "Year 12"
+  },
+  {
+    "id": 344,
+    "title": "Quadratic roots complex",
+    "latex": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+    "desc": "Formula for quadratic roots complex.",
+    "topic": "Complex Numbers",
+    "level": "Year 12"
+  },
+  {
+    "id": 345,
+    "title": "Distance formula 3D",
+    "latex": "d=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}",
+    "desc": "Standard formula for distance formula 3d.",
+    "topic": "Vectors",
+    "level": "Year 12"
+  },
+  {
+    "id": 346,
+    "title": "Distance-speed-time triangle",
+    "latex": "d=st",
+    "desc": "Formula for distance-speed-time triangle.",
+    "topic": "Algebra",
+    "level": "Year 9"
+  },
+  {
+    "id": 347,
+    "title": "Simple probability percentage",
+    "latex": "\\text{percentage}=p\\times100\\%",
+    "desc": "Probability formula used in probability.",
+    "topic": "Probability",
+    "level": "Year 9"
+  },
+  {
+    "id": 348,
+    "title": "Scale factor length",
+    "latex": "\\frac{L_1}{L_2}=k",
+    "desc": "Formula for scale factor length.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 349,
+    "title": "Surface area of cuboid",
+    "latex": "A=2(lw+lh+wh)",
+    "desc": "Formula for surface area of cuboid.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 350,
+    "title": "Volume of cuboid",
+    "latex": "V=lwh",
+    "desc": "Formula for volume of cuboid.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 351,
+    "title": "Area of semicircle",
+    "latex": "A=\\frac{1}{2}\\pi r^2",
+    "desc": "Formula for area of semicircle.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 352,
+    "title": "Circumference of semicircle",
+    "latex": "P=\\pi r+2r",
+    "desc": "Formula for circumference of semicircle.",
+    "topic": "Geometry",
+    "level": "Year 9"
+  },
+  {
+    "id": 353,
+    "title": "Quadratic intercept form",
+    "latex": "y=a(x-r_1)(x-r_2)",
+    "desc": "Formula for quadratic intercept form.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 354,
+    "title": "Reciprocal function",
+    "latex": "y=x^{-1}=\\frac{1}{x}",
+    "desc": "Formula for reciprocal function.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 355,
+    "title": "Square root function",
+    "latex": "y=\\sqrt{x}",
+    "desc": "Formula for square root function.",
+    "topic": "Functions",
+    "level": "Year 10"
+  },
+  {
+    "id": 356,
+    "title": "Exponential solving with logs",
+    "latex": "a^x=b\\Rightarrow x=\\log_a b",
+    "desc": "Formula for exponential solving with logs.",
+    "topic": "Logarithms",
+    "level": "Year 11"
+  },
+  {
+    "id": 357,
+    "title": "Log equation base e",
+    "latex": "\\ln x=k\\Rightarrow x=e^k",
+    "desc": "Formula for log equation base e.",
+    "topic": "Logarithms",
+    "level": "Year 11"
+  },
+  {
+    "id": 358,
+    "title": "Derivative of sqrt x",
+    "latex": "\\frac{d}{dx}(\\sqrt{x})=\\frac{1}{2\\sqrt{x}}",
+    "desc": "Formula for derivative of sqrt x.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 359,
+    "title": "Derivative of reciprocal",
+    "latex": "\\frac{d}{dx}\\left(\\frac{1}{x}\\right)=-\\frac{1}{x^2}",
+    "desc": "Formula for derivative of reciprocal.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 360,
+    "title": "Integral of sec^2 x",
+    "latex": "\\int \\sec^2x\\,dx=\\tan x+C",
+    "desc": "Formula for integral of sec^2 x.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 361,
+    "title": "Integral of 1 over x squared",
+    "latex": "\\int x^{-2}\\,dx=-x^{-1}+C",
+    "desc": "Formula for integral of 1 over x squared.",
+    "topic": "Calculus",
+    "level": "Year 12"
+  },
+  {
+    "id": 362,
+    "title": "Probability expected winnings",
+    "latex": "E=\\sum (\\text{payoff}\\times\\text{probability})",
+    "desc": "Probability formula used in probability.",
+    "topic": "Probability",
+    "level": "Year 11"
+  },
+  {
+    "id": 363,
+    "title": "Standard normal variable",
+    "latex": "Z\\sim N(0,1)",
+    "desc": "Formula for standard normal variable.",
+    "topic": "Probability",
+    "level": "Year 12"
+  },
+  {
+    "id": 364,
+    "title": "Complex conjugate product",
+    "latex": "z\\bar z=|z|^2",
+    "desc": "Formula for complex conjugate product.",
+    "topic": "Complex Numbers",
+    "level": "Year 12"
+  },
+  {
+    "id": 365,
+    "title": "Midpoint in 3D",
+    "latex": "\\left(\\frac{x_1+x_2}{2},\\frac{y_1+y_2}{2},\\frac{z_1+z_2}{2}\\right)",
+    "desc": "Formula for midpoint in 3D.",
+    "topic": "Vectors",
+    "level": "Year 12"
+  }
+]

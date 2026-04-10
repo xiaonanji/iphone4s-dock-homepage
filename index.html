@@ -7,6 +7,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="format-detection" content="telephone=no">
   <title>Desk Display</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -41,13 +42,19 @@
             </div>
           </footer>
         </div>
-        <div class="dog-strip" aria-hidden="true">
+        <div class="dog-strip" id="dog-strip" aria-hidden="true">
           <pre class="dog-sprite" id="dog-sprite"></pre>
+          <div class="math-strip" id="math-strip">
+            <div class="formula-label" id="formula-label"></div>
+            <div class="formula-katex" id="formula-katex"></div>
+          </div>
+          <button class="strip-toggle" id="strip-toggle" title="Toggle formula / dog">&#8721;</button>
         </div>
       </main>
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

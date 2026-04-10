@@ -399,4 +399,73 @@
     raf(dogTick);
   }
   // ───────────────────────────────────────────────────────────
+
+  // ── Daily math formula ──────────────────────────────────────
+  var dogStripEl   = document.getElementById("dog-strip");
+  var mathStripEl  = document.getElementById("math-strip");
+  var formulaLabel = document.getElementById("formula-label");
+  var formulaKatex = document.getElementById("formula-katex");
+  var toggleBtn    = document.getElementById("strip-toggle");
+
+  function getDayOfYear() {
+    var now   = new Date();
+    var start = new Date(now.getFullYear(), 0, 1);
+    return Math.floor((now - start) / 86400000); // 0-indexed
+  }
+
+  function renderFormula(formulas) {
+    if (!formulas || !formulas.length) { return; }
+    var idx     = getDayOfYear() % formulas.length;
+    var formula = formulas[idx];
+    formulaLabel.textContent = formula.title || "";
+    if (window.katex && formula.latex) {
+      try {
+        formulaKatex.innerHTML = katex.renderToString(formula.latex, {
+          throwOnError: false,
+          displayMode: false
+        });
+      } catch (e) {
+        formulaKatex.textContent = formula.latex;
+      }
+    } else {
+      formulaKatex.textContent = formula.latex || "";
+    }
+  }
+
+  function applyMode(mode) {
+    if (mode === "math") {
+      dogStripEl.classList.add("math-mode");
+    } else {
+      dogStripEl.classList.remove("math-mode");
+    }
+    try { localStorage.setItem("displayMode", mode); } catch (e) {}
+  }
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var current = dogStripEl.classList.contains("math-mode") ? "math" : "dog";
+      applyMode(current === "math" ? "dog" : "math");
+    });
+  }
+
+  // Restore last mode
+  var savedMode = "dog";
+  try { savedMode = localStorage.getItem("displayMode") || "dog"; } catch (e) {}
+  applyMode(savedMode);
+
+  // Fetch formulas
+  var req = new XMLHttpRequest();
+  req.open("GET", "/math_formulas_year9_12_365_english.json", true);
+  req.onreadystatechange = function () {
+    if (req.readyState !== 4) { return; }
+    if (req.status >= 200 && req.status < 300) {
+      try {
+        var formulas = JSON.parse(req.responseText);
+        renderFormula(formulas);
+      } catch (e) {}
+    }
+  };
+  req.send(null);
+  // ────────────────────────────────────────────────────────────
 })();
