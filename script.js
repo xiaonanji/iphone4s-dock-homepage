@@ -259,52 +259,52 @@
               window.webkitRequestAnimationFrame ||
               function (fn) { return setTimeout(fn, 16); };
 
-    // 3-line frames. Row order: ears / face / legs.
+    // 4-line frames. Row order: ears / face+tail / upper-legs / paws.
     var DOG = {
-      // fast run – legs visibly alternate /\/\ ↔ \/\/
+      // run – legs alternate stride A / stride B
       run: [
-        "  /\\  \n(o.o)>\n/\\ /\\",
-        "  /\\  \n(o.o)>\n \\/\\/ "
+        "  __\n  (___()'`;\n  /,    /`\n  \\\"--\\",
+        "  __\n  (___()'`;\n  \\`    ,\\\n  /`--`/"
       ],
-      // slow trot – calm eyes, gentle step
+      // trot – slow dignified walk
       trot: [
-        "  /\\  \n(-.-)>\n  ||  ",
-        "  /\\  \n(-.-)>\n _||_ "
+        "  __\n  (___()'`-\n  /|    |`\n  `'--'`",
+        "  __\n  (___()'`-\n  `|    |\\\n  `'--'`"
       ],
       // sitting still
       sit: [
-        "  /\\  \n(o.o) \n  UU  "
+        "  __\n  (___()'`\n   ||  ||\n   ``--``"
       ],
-      // tail wags through 4 positions: \ - / _
+      // tail sweeps \  -  /  .
       wag: [
-        "  /\\  \n(o.o)\\\n  UU  ",
-        "  /\\  \n(o.o)-\n  UU  ",
-        "  /\\  \n(o.o)/\n  UU  ",
-        "  /\\  \n(o.o)_\n  UU  "
+        "  __\n  (___()'`\\\n   ||  ||\n   ``--``",
+        "  __\n  (___()'`-\n   ||  ||\n   ``--``",
+        "  __\n  (___()'`/\n   ||  ||\n   ``--``",
+        "  __\n  (___()'`.\n   ||  ||\n   ``--``"
       ],
-      // barking – mouth opens O, snaps shut
+      // bark – jaw opens (=), tail flicks (!)
       bark: [
-        "  /\\  \n(oO)! \n  ||  ",
-        "  /\\  \n(o.o) \n  ||  "
+        "  __\n  (___()=`!\n  /,    /`\n  \\\"--\\",
+        "  __\n  (___()'`;\n  /,    /`\n  \\\"--\\"
       ],
-      // back leg scratching ear – leg cycles /|\ positions
+      // scratch – eye squints (~), back leg raises
       scratch: [
-        "  /\\  \n(o_o) \n  U/  ",
-        "  /\\  \n(o.o) \n  U|  ",
-        "  /\\  \n(o_o) \n  U\\  ",
-        "  /\\  \n(o.o) \n  UU  "
+        "  __\n  (___()~`;\n  /,  \\  `\n  `'--  `",
+        "  __\n  (___()~`;\n  /,   \\ `\n  `'--  `",
+        "  __\n  (___()'`;\n  /,    /`\n  \\\"--\\",
+        "  __\n  (___()~`;\n  /,  \\  `\n  `'--  `"
       ],
-      // nose-down sniff – u eyes look down, dot trail on ground
+      // sniff – nose expression changes, dot trail
       sniff: [
-        "  /\\  \n(u.u)>\n/\\.   ",
-        "  /\\  \n(u.u)>\n ./\\. "
+        "  __\n  (___().,;\n  /,    /`\n  \\\"--\\",
+        "  __\n  (___()..;\n  /,    /`\n  \\\"--\\"
       ],
-      // full somersault – ears and legs flip through 4 orientations
+      // roll – barrel tumble
       roll: [
-        "  /\\  \n(o.o) \n  )(  ",
-        "  )(  \n(o.o) \n  /\\  ",
-        "  \\/  \n(o.o) \n  /\\  ",
-        "  /\\  \n(o.o) \n  \\/  "
+        "  __\n  (___()'`;\n  /,    /`\n  \\\"--\\",
+        "  ___\n (  `'()\n  |  /`|\n  `--``",
+        "  ___\n  ()'`  )\n  |`\\  |\n  ``--`",
+        "  ___\n (  `'()\n  |  /`|\n  `--``"
       ]
     };
 
@@ -326,7 +326,7 @@
     var dFrame  = 0;
     var dFrameT = 0;
     var dStateT = 0;
-    var dX      = -70;
+    var dX      = -100;
     var dLastT  = null;
     var dNextAct = null;   // next scheduled behavior name
     var dNextT   = 0;      // dStateT value when to trigger it
@@ -373,7 +373,7 @@
         }
 
         // Wrap off right edge → reappear from left
-        if (dX > vw + 70) {
+        if (dX > vw + 100) {
           dX = -70;
           dStateT = 0;
           dogPlan();
