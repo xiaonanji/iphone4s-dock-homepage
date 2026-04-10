@@ -74,12 +74,12 @@
       displayNode.style.webkitTransform = "scale(" + scale + ")";
       displayNode.style.transform = "scale(" + scale + ")";
     } else {
-      displayNode.style.top = "1px";
+      displayNode.style.top = "50%";
       displayNode.style.left = "50%";
       displayNode.style.marginLeft = Math.round(baseWidth / -2) + "px";
-      displayNode.style.marginTop = "0";
-      displayNode.style.webkitTransformOrigin = "50% 0";
-      displayNode.style.transformOrigin = "50% 0";
+      displayNode.style.marginTop = Math.round(baseHeight / -2) + "px";
+      displayNode.style.webkitTransformOrigin = "50% 50%";
+      displayNode.style.transformOrigin = "50% 50%";
       displayNode.style.webkitTransform = "scale(" + scale + ")";
       displayNode.style.transform = "scale(" + scale + ")";
     }
