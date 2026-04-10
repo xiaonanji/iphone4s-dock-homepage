@@ -124,14 +124,21 @@ body {
   font-weight: bold;
   line-height: 0.86;
   letter-spacing: -0.07em;
-  text-align: center;
   text-shadow: 0 0 16px rgba(40, 231, 241, 0.11);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
 .clock-separator {
-  display: inline-block;
-  width: 18px;
-  text-align: center;
+  padding: 0 6px;
+  letter-spacing: 0;
   color: #28e7f1;
   -webkit-animation: pulse 1.2s infinite;
   animation: pulse 1.2s infinite;
@@ -210,17 +217,18 @@ body {
 .temperature-now {
   color: #28e7f1;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 49px;
+  font-size: 38px;
   line-height: 0.9;
   letter-spacing: 0.02em;
 }
 
 .weather-range {
-  margin-top: 4px;
+  margin-top: 5px;
   color: rgba(40, 231, 241, 0.88);
-  font-size: 10px;
-  line-height: 1.1;
-  letter-spacing: 0.08em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -281,7 +289,11 @@ body {
   }
 
   .temperature-now {
-    font-size: 46px;
+    font-size: 35px;
+  }
+
+  .weather-range {
+    font-size: 20px;
   }
 }
 
@@ -320,6 +332,10 @@ body {
   }
 
   .temperature-now {
-    font-size: 36px;
+    font-size: 30px;
+  }
+
+  .weather-range {
+    font-size: 17px;
   }
 }
