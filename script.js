@@ -251,4 +251,97 @@
   } else {
     window.onresize = fitDisplay;
   }
+
+  // ── ASCII dog ──────────────────────────────────────────────
+  var dogEl = document.getElementById("dog-sprite");
+  if (dogEl) {
+    var raf = window.requestAnimationFrame ||
+              window.webkitRequestAnimationFrame ||
+              function (fn) { return setTimeout(fn, 16); };
+
+    // Each frame is 3 rows joined by \n. All frames same bounding width.
+    var DOG = {
+      //        ears       face+dir   legs
+      run: [
+        "  /\\  \n(o.o)>\n /||\\ ",
+        "  /\\  \n(o.o)>\n \\||/ "
+      ],
+      sit: [
+        "  /\\  \n(o.o) \n  UU  "
+      ],
+      wag: [
+        "  /\\  \n(o.o)~\n  ||  ",
+        "  /\\  \n(o.o)^\n  ||  "
+      ],
+      roll: [
+        "  /\\  \n(o.o) \n  )(  ",   // normal
+        "  )(  \n(o.o) \n  /\\  ",   // upside-down (ears down, legs up)
+        "  /\\  \n(o.o) \n  )(  ",
+        "  )(  \n(o.o) \n  /\\  "
+      ]
+    };
+
+    var DOG_SPEED     = 52;   // px per second while running
+    var FRAME_RATE    = { run: 0.18, wag: 0.22, roll: 0.13, sit: 99 };
+
+    var dState   = "run";
+    var dFrame   = 0;
+    var dFrameT  = 0;
+    var dStateT  = 0;
+    var dX       = -70;
+    var dLastT   = null;
+
+    function dogSetState(s) {
+      dState  = s;
+      dFrame  = 0;
+      dFrameT = 0;
+      dStateT = 0;
+    }
+
+    function dogTick(ts) {
+      if (dLastT === null) { dLastT = ts; }
+      var dt = Math.min((ts - dLastT) / 1000, 0.05);
+      dLastT = ts;
+
+      dFrameT += dt;
+      dStateT += dt;
+
+      var vw     = window.innerWidth || 480;
+      var frames = DOG[dState];
+
+      // Advance frame
+      if (dFrameT >= FRAME_RATE[dState]) {
+        dFrameT = 0;
+        dFrame  = (dFrame + 1) % frames.length;
+      }
+
+      if (dState === "run") {
+        dX += DOG_SPEED * dt;
+
+        // Occasionally pause for a special behaviour mid-screen
+        if (dStateT > 3.5 && dX > 80 && dX < vw - 200) {
+          var r = Math.random();
+          if      (r < 0.004) { dogSetState("sit");  }
+          else if (r < 0.008) { dogSetState("wag");  }
+          else if (r < 0.011) { dogSetState("roll"); }
+        }
+
+        // Wrap: reappear from the left
+        if (dX > vw + 70) { dX = -70; dStateT = 0; }
+
+      } else {
+        // sit ~2.5 s, wag ~2 s, roll ~1.6 s
+        var dur = dState === "sit" ? 2.5 : dState === "wag" ? 2.0 : 1.6;
+        if (dStateT > dur) { dogSetState("run"); }
+      }
+
+      dogEl.textContent    = DOG[dState][dFrame];
+      dogEl.style.left     = Math.round(dX) + "px";
+
+      raf(dogTick);
+    }
+
+    raf(dogTick);
+  }
+  // ───────────────────────────────────────────────────────────
 })();
