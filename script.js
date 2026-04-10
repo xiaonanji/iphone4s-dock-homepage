@@ -61,27 +61,30 @@
       scale = 2.4;
     }
 
-    displayNode.style.width = baseWidth + "px";
-    displayNode.style.height = baseHeight + "px";
-
     if (isPortrait) {
+      displayNode.style.width = baseWidth + "px";
+      displayNode.style.height = baseHeight + "px";
       displayNode.style.top = "50%";
       displayNode.style.left = "50%";
       displayNode.style.marginLeft = Math.round(baseWidth / -2) + "px";
       displayNode.style.marginTop = Math.round(baseHeight / -2) + "px";
+      displayNode.style.borderRadius = "";
       displayNode.style.webkitTransformOrigin = "50% 50%";
       displayNode.style.transformOrigin = "50% 50%";
       displayNode.style.webkitTransform = "scale(" + scale + ")";
       displayNode.style.transform = "scale(" + scale + ")";
     } else {
-      displayNode.style.top = "50%";
-      displayNode.style.left = "50%";
-      displayNode.style.marginLeft = Math.round(baseWidth / -2) + "px";
-      displayNode.style.marginTop = Math.round(baseHeight / -2) + "px";
+      displayNode.style.width = viewportWidth + "px";
+      displayNode.style.height = viewportHeight + "px";
+      displayNode.style.top = "0";
+      displayNode.style.left = "0";
+      displayNode.style.marginLeft = "0";
+      displayNode.style.marginTop = "0";
+      displayNode.style.borderRadius = "0";
       displayNode.style.webkitTransformOrigin = "50% 50%";
       displayNode.style.transformOrigin = "50% 50%";
-      displayNode.style.webkitTransform = "scale(" + scale + ")";
-      displayNode.style.transform = "scale(" + scale + ")";
+      displayNode.style.webkitTransform = "";
+      displayNode.style.transform = "";
     }
   }
 
