@@ -42,7 +42,7 @@
     }
 
     var baseWidth = isPortrait ? 296 : 456;
-    var baseHeight = isPortrait ? 432 : 206;
+    var baseHeight = isPortrait ? 432 : 212;
     var horizontalPadding = isPortrait ? 16 : 4;
     var verticalPadding = isPortrait ? 18 : 4;
     var scaleX = (viewportWidth - horizontalPadding) / baseWidth;

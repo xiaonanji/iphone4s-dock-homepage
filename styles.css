@@ -56,9 +56,9 @@ body {
   left: 50%;
   display: table;
   width: 456px;
-  height: 206px;
+  height: 212px;
   margin-left: -228px;
-  margin-top: -103px;
+  margin-top: -106px;
   border: 1px solid rgba(172, 197, 214, 0.18);
   border-radius: 15px;
   background: rgba(17, 25, 32, 0.88);
@@ -252,9 +252,9 @@ body {
 @media screen and (max-height: 260px) {
   .display {
     width: 440px;
-    height: 194px;
+    height: 200px;
     margin-left: -220px;
-    margin-top: -97px;
+    margin-top: -100px;
   }
 
   .time-panel {
