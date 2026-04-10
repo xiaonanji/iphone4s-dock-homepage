@@ -8,7 +8,8 @@ Simple static web page for an iPhone 4/4S used as a landscape desk clock and wea
 - Full date
 - Weather panel with current temperature, feels-like temperature, and daily high/low
 - Lightweight HTML, CSS, and JavaScript only
-- No build step required
+- No build step required for the frontend
+- Includes an EdgeOne Pages function for weather proxying
 
 ## Configuration
 
@@ -23,6 +24,7 @@ var WEATHER_LOCATION = {
 ```
 
 The displayed time and date come from the device browser, so they follow the iPhone's local time zone automatically.
+Weather is requested from the site's own `/api/weather` endpoint, which proxies Open-Meteo through EdgeOne Pages Functions.
 
 ## Deploy To EdgeOne Pages
 

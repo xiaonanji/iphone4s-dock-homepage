@@ -30,21 +30,27 @@
   function fitDisplay() {
     var viewportWidth = window.innerWidth || document.documentElement.clientWidth || 480;
     var viewportHeight = window.innerHeight || document.documentElement.clientHeight || 320;
-    var isPortrait = viewportHeight > viewportWidth;
-    var baseWidth = isPortrait ? 296 : 448;
-    var baseHeight = isPortrait ? 432 : 248;
-    var horizontalPadding = isPortrait ? 16 : 12;
-    var verticalPadding = isPortrait ? 18 : 10;
+    var orientationValue = window.orientation;
+    var isPortrait;
+
+    if (orientationValue === 90 || orientationValue === -90) {
+      isPortrait = false;
+    } else if (orientationValue === 0 || orientationValue === 180) {
+      isPortrait = true;
+    } else {
+      isPortrait = viewportHeight > viewportWidth;
+    }
+
+    var baseWidth = isPortrait ? 296 : 456;
+    var baseHeight = isPortrait ? 432 : 206;
+    var horizontalPadding = isPortrait ? 16 : 4;
+    var verticalPadding = isPortrait ? 18 : 4;
     var scaleX = (viewportWidth - horizontalPadding) / baseWidth;
     var scaleY = (viewportHeight - verticalPadding) / baseHeight;
     var scale = Math.min(scaleX, scaleY);
 
     if (scale > 2.4) {
       scale = 2.4;
-    }
-
-    if (scale < 0.72) {
-      scale = 0.72;
     }
 
     displayNode.style.width = baseWidth + "px";
@@ -148,12 +154,10 @@
   }
 
   function requestWeather() {
-    var endpoint = "https://api.open-meteo.com/v1/forecast?latitude=" +
+    var endpoint = "/api/weather?latitude=" +
       encodeURIComponent(WEATHER_LOCATION.latitude) +
       "&longitude=" + encodeURIComponent(WEATHER_LOCATION.longitude) +
-      "&current=temperature_2m,apparent_temperature,weather_code" +
-      "&daily=temperature_2m_max,temperature_2m_min" +
-      "&forecast_days=1&timezone=auto";
+      "&timezone=auto";
 
     var request = new XMLHttpRequest();
     request.open("GET", endpoint, true);
@@ -164,7 +168,16 @@
 
       if (request.status >= 200 && request.status < 300) {
         try {
-          updateWeatherUI(JSON.parse(request.responseText));
+          var payload = JSON.parse(request.responseText);
+
+          if (payload && payload.error) {
+            conditionNode.innerHTML = "Weather unavailable";
+            updatedNode.innerHTML = payload.message || "Weather service is unavailable.";
+            statusNode.innerHTML = "Weather offline";
+            return;
+          }
+
+          updateWeatherUI(payload);
         } catch (error) {
           conditionNode.innerHTML = "Weather unavailable";
           updatedNode.innerHTML = "Received data could not be read.";
@@ -187,11 +200,14 @@
 
   setInterval(updateClock, 1000);
   setInterval(requestWeather, WEATHER_REFRESH_MS);
+  setTimeout(fitDisplay, 350);
+  setTimeout(fitDisplay, 1000);
 
   if (window.addEventListener) {
     window.addEventListener("resize", fitDisplay, false);
     window.addEventListener("orientationchange", function () {
       setTimeout(fitDisplay, 250);
+      setTimeout(fitDisplay, 800);
     }, false);
   } else {
     window.onresize = fitDisplay;
