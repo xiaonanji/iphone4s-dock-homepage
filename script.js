@@ -20,7 +20,6 @@
   var conditionNode = document.getElementById("weather-condition");
   var tempNode = document.getElementById("weather-temp");
   var rangeNode = document.getElementById("weather-range");
-  var statusNode = document.getElementById("weather-status");
 
   function pad(value) {
     return value < 10 ? "0" + value : String(value);
@@ -172,15 +171,13 @@
       iconNode.innerHTML = "";
       rangeNode.innerHTML = "-- / --";
       tempNode.innerHTML = "--&deg;C";
-      statusNode.innerHTML = "WEATHER OFFLINE";
       return;
     }
 
     conditionNode.innerHTML = weatherLabel(payload.current.weather_code);
     iconNode.innerHTML = weatherIconMarkup(payload.current.weather_code);
     tempNode.innerHTML = asTemperature(payload.current.temperature_2m) + "C";
-    rangeNode.innerHTML = "LOW " + asTemperature(payload.daily.temperature_2m_min[0]) + "   HIGH " + asTemperature(payload.daily.temperature_2m_max[0]);
-    statusNode.innerHTML = "UPDATED " + formatTime(new Date());
+    rangeNode.innerHTML = asTemperature(payload.daily.temperature_2m_min[0]) + " - " + asTemperature(payload.daily.temperature_2m_max[0]);
   }
 
   function formatTime(date) {
@@ -211,7 +208,6 @@
             iconNode.innerHTML = "";
             rangeNode.innerHTML = payload.message || "-- / --";
             tempNode.innerHTML = "--&deg;C";
-            statusNode.innerHTML = "WEATHER OFFLINE";
             return;
           }
 
@@ -221,7 +217,6 @@
           iconNode.innerHTML = "";
           rangeNode.innerHTML = "DATA ERROR";
           tempNode.innerHTML = "--&deg;C";
-          statusNode.innerHTML = "WEATHER ERROR";
         }
         return;
       }
@@ -230,7 +225,6 @@
       iconNode.innerHTML = "";
       rangeNode.innerHTML = "NETWORK ERROR";
       tempNode.innerHTML = "--&deg;C";
-      statusNode.innerHTML = "WEATHER OFFLINE";
     };
 
     request.send(null);
