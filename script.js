@@ -35,7 +35,7 @@
     var scale;
     var scaleX;
     var scaleY;
-    var landscapeFillBoost = 1.04;
+    var landscapeFillBoost = 1.015;
 
     if (orientationValue === 90 || orientationValue === -90) {
       isPortrait = false;
