@@ -79,9 +79,12 @@ body {
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: 12px 14px 2px;
+  padding: 10px 14px 10px;
 }
 
 .clock-face:before {
@@ -144,10 +147,9 @@ body {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-  flex: 1 1 auto;
-  padding-top: 10px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
 
 .bottom-band {
@@ -259,7 +261,7 @@ body {
   }
 
   .clock-face {
-    padding: 10px 12px 1px;
+    padding: 8px 12px 8px;
   }
 
   .date-line {
@@ -268,10 +270,6 @@ body {
 
   .clock-main {
     font-size: 116px;
-  }
-
-  .time-band {
-    padding-top: 8px;
   }
 
   .weekday-block {
@@ -296,7 +294,7 @@ body {
   }
 
   .clock-face {
-    padding: 18px 16px 12px;
+    padding: 16px 16px 16px;
   }
 
   .date-line {
@@ -305,10 +303,6 @@ body {
 
   .clock-main {
     font-size: 88px;
-  }
-
-  .time-band {
-    padding-top: 18px;
   }
 
   .weekday-block {
