@@ -446,6 +446,48 @@
   }
   // ────────────────────────────────────────────────────────────
 
+  // ── Notification banner ─────────────────────────────────────
+  var NOTIFICATION_REFRESH_MS = 2 * 60 * 1000;
+  var notificationNode = document.getElementById("notification-text");
+
+  function getTodayString() {
+    var now = new Date();
+    var y = now.getFullYear();
+    var m = now.getMonth() + 1;
+    var d = now.getDate();
+    return y + "-" + (m < 10 ? "0" + m : String(m)) + "-" + (d < 10 ? "0" + d : String(d));
+  }
+
+  function applyNotification(notifications) {
+    if (!notificationNode) { return; }
+    if (!notifications || !notifications.length) { notificationNode.textContent = ""; return; }
+    var today = getTodayString();
+    var matched = "";
+    for (var i = 0; i < notifications.length; i++) {
+      var n = notifications[i];
+      if (n.start && n.end && n.text && today >= n.start && today <= n.end) {
+        matched = n.text; // last match wins on overlap
+      }
+    }
+    notificationNode.textContent = matched;
+  }
+
+  function fetchNotifications() {
+    var nreq = new XMLHttpRequest();
+    nreq.open("GET", "/notifications.json?_t=" + Date.now(), true);
+    nreq.onreadystatechange = function () {
+      if (nreq.readyState !== 4) { return; }
+      if (nreq.status >= 200 && nreq.status < 300) {
+        try { applyNotification(JSON.parse(nreq.responseText)); } catch (e) {}
+      }
+    };
+    nreq.send(null);
+  }
+
+  fetchNotifications();
+  setInterval(fetchNotifications, NOTIFICATION_REFRESH_MS);
+  // ────────────────────────────────────────────────────────────
+
   // ── Daily math formula ──────────────────────────────────────
   var formulaLabel = document.getElementById("formula-label");
   var formulaKatex = document.getElementById("formula-katex");
