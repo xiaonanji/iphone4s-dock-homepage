@@ -252,51 +252,80 @@
     window.onresize = fitDisplay;
   }
 
-  // ── Animal runner (bunnies + cats) ──────────────────────────
+  // ── Animal runner (bunnies + cats with multiple animations) ──
   var charCanvas = document.getElementById("char-sprite");
   if (charCanvas) {
     var raf = window.requestAnimationFrame ||
               window.webkitRequestAnimationFrame ||
               function (fn) { return setTimeout(fn, 16); };
 
-    // All sprites are 32×32 px tiles. Bunnies = 8 frames, cats = 7 frames.
-    var CHARACTERS = [
-      // Bunnies
-      { src: "AllBunniesFree/BlackWhite/Running.png",   frames: 8 },
-      { src: "AllBunniesFree/Brown2Color/Running.png",  frames: 8 },
-      { src: "AllBunniesFree/BrownWhite/Running.png",   frames: 8 },
-      { src: "AllBunniesFree/BunnyBlack/Running.png",   frames: 8 },
-      { src: "AllBunniesFree/BunnyBrown/Running.png",   frames: 8 },
-      { src: "AllBunniesFree/DemonicBunny/Running.png", frames: 8 },
-      { src: "AllBunniesFree/FantasyBunny/Running.png", frames: 8 },
-      { src: "AllBunniesFree/GreyBunny/Running.png",    frames: 8 },
-      { src: "AllBunniesFree/LightBrown/Running.png",   frames: 8 },
-      { src: "AllBunniesFree/WhiteBunny/Running.png",   frames: 8 },
-      // Bonus bunny
-      { src: "Cats/BONUSgift/GreyBunnyPaid/Running.png",            frames: 8 },
-      // Cats
-      { src: "Cats/BrownCat/RunCattt.png",                          frames: 7 },
-      { src: "Cats/ChristmasCatPaid/RunCattt.png",                  frames: 7 },
-      { src: "Cats/EgyptCatPaid/RunCatb.png",                       frames: 7 },
-      { src: "Cats/ThreeColorPaid/RunCatt.png",                     frames: 7 },
-      { src: "Cats/White-DifferentEyes/RunCatttt.png",              frames: 7 },
-      { src: "Cats/BlackCat/PNG/RunCatb.png",                       frames: 7 },
-      { src: "Cats/Siamese/PNG/RunCattt.png",                       frames: 7 },
-      { src: "Cats/TigerCatPaid/PNG/RunCatt.png",                   frames: 7 },
-      { src: "Cats/DemonicPaid/PNG/RunCatd.png",                    frames: 7 },
-      { src: "Cats/BatmanCatPaid/BlackMask/RunCatt.png",            frames: 7 },
-      { src: "Cats/BatmanCatPaid/DarkBlueMask/RunCatt.png",         frames: 7 },
-      { src: "Cats/CatClassical/BlackCollor/RunCatt.png",           frames: 7 },
-      { src: "Cats/CatClassical/BlueCollar/RunCat.png",             frames: 7 },
-      { src: "Cats/CatClassical/GreenCollor/RunCatt.png",           frames: 7 },
-      { src: "Cats/CatClassical/OrangeCollor/RunCatt.png",          frames: 7 },
-      { src: "Cats/CatClassical/PinkCollor/RunCatt.png",            frames: 7 },
-      { src: "Cats/CatClassical/PurpleCollor/RunCatt.png",          frames: 7 },
-      { src: "Cats/CatClassical/RedCollor/RunCatt.png",             frames: 7 },
-      { src: "Cats/CatClassical/YellowCollor/RunCatt.png",          frames: 7 },
-      { src: "Cats/Halloween/Vampire/RunCatb.png",                  frames: 7 },
-      { src: "Cats/Halloween/Wizard/RunCatb.png",                   frames: 7 }
+    // Per-animation-type properties. startOffset (0–1) makes slow anims
+    // appear partway across the screen so they don't take forever to exit.
+    var ANIM_PROPS = {
+      run:    { frames: 7,  speed: 130, frameRate: 0.09 },
+      jump:   { frames: 13, speed: 155, frameRate: 0.07 },
+      idle:   { frames: 7,  speed:  25, frameRate: 0.13 },
+      idle2:  { frames: 14, speed:  25, frameRate: 0.10 },
+      attack: { frames: 9,  speed: 110, frameRate: 0.08 },
+      hurt:   { frames: 7,  speed:  55, frameRate: 0.09 },
+      sit:    { frames: 3,  speed:  30, frameRate: 0.22, startOffset: 0.35 },
+      lick:   { frames: 18, speed:  30, frameRate: 0.08, startOffset: 0.35 }
+    };
+
+    // Cat groups — null means that animation isn't available for this cat.
+    // Filenames match exactly what's on disk (the extra t/b/d suffixes vary per pack).
+    var CAT_GROUPS = [
+      { base: "Cats/BrownCat/",                  run:"RunCattt.png",   idle:"IdleCattt.png",   idle2:"Idle2Cattt.png",  jump:"JumpCatttt.png",  attack:"AttackCattt.png", hurt:"HurtCatttt.png",  sit:"Sittinggg.png"  },
+      { base: "Cats/ChristmasCatPaid/",           run:"RunCattt.png",   idle:"IdleCattt.png",   idle2:"Idle2Cattt.png",  jump:"JumpCatttt.png",  attack:"AttackCattt.png", hurt:"HurtCatttt.png",  sit:"Sittinggg.png"  },
+      { base: "Cats/Siamese/PNG/",                run:"RunCattt.png",   idle:"IdleCattt.png",   idle2:"Idle2Cattt.png",  jump:"JumpCatttt.png",  attack:"AttackCattt.png", hurt:"HurtCatttt.png",  sit:"Sittinggg.png"  },
+      { base: "Cats/EgyptCatPaid/",               run:"RunCatb.png",    idle:"IdleCatb.png",    idle2:"Idle2Catb.png",   jump:"JumpCabt.png",    attack:"AttackCatb.png",  hurt:"HurtCatb.png",    sit:"Sittingb.png"   },
+      { base: "Cats/BlackCat/PNG/",               run:"RunCatb.png",    idle:"IdleCatb.png",    idle2:"Idle2Catb.png",   jump:"JumpCabt.png",    attack:"AttackCatb.png",  hurt:"HurtCatb.png",    sit:"Sittingb.png"   },
+      { base: "Cats/Halloween/Vampire/",           run:"RunCatb.png",    idle:"IdleCatb.png",    idle2:"Idle2Catb.png",   jump:"JumpCabt.png",    attack:"AttackCatb.png",  hurt:"HurtCatb.png",    sit:"Sittingb.png"   },
+      { base: "Cats/ThreeColorPaid/",             run:"RunCatt.png",    idle:"IdleCatt.png",    idle2:"Idle2Catt.png",   jump:"JumpCattt.png",   attack:"AttackCatt.png",  hurt:"HurtCattt.png",   sit:"Sittingg.png"   },
+      { base: "Cats/TigerCatPaid/PNG/",           run:"RunCatt.png",    idle:"IdleCatt.png",    idle2:"Idle2Catt.png",   jump:"JumpCattt.png",   attack:"AttackCatt.png",  hurt:"HurtCattt.png",   sit:"Sittingg.png"   },
+      { base: "Cats/BatmanCatPaid/BlackMask/",    run:"RunCatt.png",    idle:"IdleCatt.png",    idle2:null,              jump:"JumpCattt.png",   attack:"AttackCatt.png",  hurt:"HurtCattt.png",   sit:"Sittingg.png"   },
+      { base: "Cats/BatmanCatPaid/DarkBlueMask/", run:"RunCatt.png",    idle:"IdleCatt.png",    idle2:null,              jump:"JumpCattt.png",   attack:"AttackCatt.png",  hurt:"HurtCattt.png",   sit:"Sittingg.png"   },
+      { base: "Cats/White-DifferentEyes/",        run:"RunCatttt.png",  idle:"IdleCatttt.png",  idle2:"Idle2Catttt.png", jump:"JumpCattttt.png", attack:"AttackCattt.png", hurt:"HurtCattttt.png", sit:"Sittingggg.png" },
+      { base: "Cats/DemonicPaid/PNG/",            run:"RunCatd.png",    idle:"IdleCatd.png",    idle2:"Idle2Catd.png",   jump:"JumpCatd.png",    attack:"AttackCatd.png",  hurt:"HurtCatd.png",    sit:"Sittingd.png"   },
+      { base: "Cats/CatClassical/BlackCollor/",   run:"RunCatt.png",    idle:"IdleCatt.png",    idle2:"Idle2Catt.png",   jump:"JumpCattt.png",   attack:"AttackCatt.png",  hurt:"HurtCattt.png",   sit:"Sittingg.png",  lick:"Liking.png" },
+      { base: "Cats/CatClassical/BlueCollar/",    run:"RunCat.png",     idle:"IdleCat.png",     idle2:"Idle2Cat.png",    jump:"JumpCat.png",     attack:"AttackCat.png",   hurt:"HurtCat.png",     sit:"Sitting.png",   lick:"Liking.png" },
+      { base: "Cats/CatClassical/GreenCollor/",   run:"RunCatt.png",    idle:"IdleCatt.png",    idle2:"Idle2Catt.png",   jump:"JumpCattt.png",   attack:"AttackCatt.png",  hurt:"HurtCattt.png",   sit:"Sittingg.png",  lick:"Liking.png" },
+      { base: "Cats/CatClassical/OrangeCollor/",  run:"RunCatt.png",    idle:"IdleCatt.png",    idle2:"Idle2Catt.png",   jump:"JumpCattt.png",   attack:"AttackCatt.png",  hurt:"HurtCattt.png",   sit:"Sittingg.png",  lick:"Liking.png" },
+      { base: "Cats/CatClassical/PinkCollor/",    run:"RunCatt.png",    idle:"IdleCatt.png",    idle2:"Idle2Catt.png",   jump:"JumpCattt.png",   attack:"AttackCatt.png",  hurt:"HurtCattt.png",   sit:"Sittingg.png",  lick:"Liking.png" },
+      { base: "Cats/CatClassical/PurpleCollor/",  run:"RunCatt.png",    idle:"IdleCatt.png",    idle2:"Idle2Catt.png",   jump:"JumpCattt.png",   attack:"AttackCatt.png",  hurt:"HurtCattt.png",   sit:"Sittingg.png",  lick:"Liking.png" },
+      { base: "Cats/CatClassical/RedCollor/",     run:"RunCatt.png",    idle:"IdleCatt.png",    idle2:"Idle2Catt.png",   jump:"JumpCattt.png",   attack:"AttackCatt.png",  hurt:"HurtCattt.png",   sit:"Sittingg.png",  lick:"Liking.png" },
+      { base: "Cats/CatClassical/YellowCollor/",  run:"RunCatt.png",    idle:"IdleCatt.png",    idle2:"Idle2Catt.png",   jump:"JumpCattt.png",   attack:"AttackCatt.png",  hurt:"HurtCattt.png",   sit:"Sittingg.png",  lick:"Liking.png" },
+      { base: "Cats/Halloween/Wizard/",            run:"RunCatb.png",    idle:"IdleCatb.png",    idle2:"Idle2Catb.png",   jump:null,              attack:null,              hurt:"HurtCatb.png",    sit:"Sittingb.png"   }
     ];
+
+    // Start with bunnies (always running, 8 frames)
+    var CHARACTERS = [
+      { src: "AllBunniesFree/BlackWhite/Running.png",   frames: 8, speed: 130, frameRate: 0.09 },
+      { src: "AllBunniesFree/Brown2Color/Running.png",  frames: 8, speed: 130, frameRate: 0.09 },
+      { src: "AllBunniesFree/BrownWhite/Running.png",   frames: 8, speed: 130, frameRate: 0.09 },
+      { src: "AllBunniesFree/BunnyBlack/Running.png",   frames: 8, speed: 130, frameRate: 0.09 },
+      { src: "AllBunniesFree/BunnyBrown/Running.png",   frames: 8, speed: 130, frameRate: 0.09 },
+      { src: "AllBunniesFree/DemonicBunny/Running.png", frames: 8, speed: 130, frameRate: 0.09 },
+      { src: "AllBunniesFree/FantasyBunny/Running.png", frames: 8, speed: 130, frameRate: 0.09 },
+      { src: "AllBunniesFree/GreyBunny/Running.png",    frames: 8, speed: 130, frameRate: 0.09 },
+      { src: "AllBunniesFree/LightBrown/Running.png",   frames: 8, speed: 130, frameRate: 0.09 },
+      { src: "AllBunniesFree/WhiteBunny/Running.png",   frames: 8, speed: 130, frameRate: 0.09 },
+      { src: "Cats/BONUSgift/GreyBunnyPaid/Running.png",frames: 8, speed: 130, frameRate: 0.09 }
+    ];
+
+    // Expand each cat group into one entry per animation type
+    var animKeys = ["run","jump","idle","idle2","attack","hurt","sit","lick"];
+    CAT_GROUPS.forEach(function (cat) {
+      for (var i = 0; i < animKeys.length; i++) {
+        var key  = animKeys[i];
+        var file = cat[key];
+        if (!file) { continue; }
+        var props = ANIM_PROPS[key];
+        var entry = { src: cat.base + file, frames: props.frames, speed: props.speed, frameRate: props.frameRate };
+        if (props.startOffset) { entry.startOffset = props.startOffset; }
+        CHARACTERS.push(entry);
+      }
+    });
 
     var FRAME_W = 32;
     var FRAME_H = 32;
@@ -307,7 +336,7 @@
     charCanvas.width  = CW;
     charCanvas.height = CH;
 
-    // Pre-load all sprites
+    // Pre-load all sprites up front
     CHARACTERS.forEach(function (c) {
       var img = new Image();
       img.src = c.src;
@@ -320,38 +349,34 @@
     var cFrameT = 0;
     var cLastT  = null;
 
-    var RUN_SPEED  = 130;  // px/s
-    var FRAME_RATE = 0.09; // s per animation frame
-
     function nextCharacter() {
       var next;
       do {
         next = Math.floor(Math.random() * CHARACTERS.length);
       } while (next === cIdx && CHARACTERS.length > 1);
-      cIdx    = next;
-      cX      = -CW;
+      cIdx = next;
+      var vw = window.innerWidth || 480;
+      cX      = CHARACTERS[cIdx].startOffset ? Math.floor(CHARACTERS[cIdx].startOffset * vw) : -CW;
       cFrame  = 0;
       cFrameT = 0;
     }
 
     function bunnyTick(ts) {
       if (cLastT === null) { cLastT = ts; raf(bunnyTick); return; }
-      var dt = Math.min((ts - cLastT) / 1000, 0.05);
-      cLastT = ts;
+      var dt   = Math.min((ts - cLastT) / 1000, 0.05);
+      cLastT   = ts;
 
       var char = CHARACTERS[cIdx];
 
-      cX      += RUN_SPEED * dt;
+      cX      += char.speed * dt;
       cFrameT += dt;
-      if (cFrameT >= FRAME_RATE) {
+      if (cFrameT >= char.frameRate) {
         cFrameT = 0;
         cFrame  = (cFrame + 1) % char.frames;
       }
 
       var vw = window.innerWidth || 480;
-      if (cX > vw + CW) {
-        nextCharacter();
-      }
+      if (cX > vw + CW) { nextCharacter(); }
 
       var img = char.img;
       if (img && img.complete && img.naturalWidth > 0) {
