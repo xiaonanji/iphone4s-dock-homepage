@@ -246,8 +246,8 @@ body {
 
 .dog-strip {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 70px;
-  flex: 0 0 70px;
+  -webkit-flex: 0 0 72px;
+  flex: 0 0 72px;
   position: relative;
   overflow: hidden;
 }
@@ -432,8 +432,8 @@ body {
   }
 
   .dog-strip {
-    -webkit-flex: 0 0 82px;
-    flex: 0 0 82px;
+    -webkit-flex: 0 0 84px;
+    flex: 0 0 84px;
   }
 
   .formula-katex {

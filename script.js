@@ -252,116 +252,87 @@
     window.onresize = fitDisplay;
   }
 
-  // ── Sprite character ───────────────────────────────────────
+  // ── Bunny runner ────────────────────────────────────────────
   var charCanvas = document.getElementById("char-sprite");
   if (charCanvas) {
     var raf = window.requestAnimationFrame ||
               window.webkitRequestAnimationFrame ||
               function (fn) { return setTimeout(fn, 16); };
 
-    // Spritesheet layout: 4 columns (frames) × 4 rows (directions)
-    // Row 0 = walk down, 1 = walk left, 2 = walk right, 3 = walk up
-    var SPRITE_COLS = 4;
-    var SPRITE_ROWS = 4;
-    var ROW_RIGHT = 2;
-    var ROW_LEFT  = 1;
-    var ROW_IDLE  = 0;
+    var BUNNY_TYPES = [
+      "BlackWhite", "Brown2Color", "BrownWhite", "BunnyBlack",
+      "BunnyBrown", "DemonicBunny", "FantasyBunny",
+      "GreyBunny", "LightBrown", "WhiteBunny"
+    ];
 
-    var spriteImg    = new Image();
-    var spriteReady  = false;
-    var frameW       = 0;
-    var frameH       = 0;
-    var displayScale = 3;
+    // All Running sheets are 256×32 — 8 frames of 32×32
+    var FRAME_W    = 32;
+    var FRAME_H    = 32;
+    var RUN_FRAMES = 8;
+    var SCALE      = 2;          // 64×64 px canvas — fills the 70px strip
+    var CW         = FRAME_W * SCALE;
+    var CH         = FRAME_H * SCALE;
 
-    // Walk state
-    var cX       = -80;
-    var cRow     = ROW_RIGHT;
-    var cFrame   = 0;
-    var cFrameT  = 0;
-    var cStateT  = 0;
-    var cLastT   = null;
-    var cIdle    = false;
-    var cIdleEnd = 0;
+    charCanvas.width  = CW;
+    charCanvas.height = CH;
 
-    var WALK_SPEED    = 40;   // px per second
-    var FRAME_RATE    = 0.18; // seconds per animation frame
-    var IDLE_FRAME_RATE = 0.5;
+    // Pre-load every Running sheet
+    var sprites = {};
+    BUNNY_TYPES.forEach(function (name) {
+      var img = new Image();
+      img.src = "AllBunniesFree/" + name + "/Running.png";
+      sprites[name] = img;
+    });
 
-    spriteImg.onload = function () {
-      frameW = spriteImg.naturalWidth  / SPRITE_COLS;
-      frameH = spriteImg.naturalHeight / SPRITE_ROWS;
-      var stripH = 70;
-      displayScale = Math.max(1, Math.min(4, Math.floor((stripH - 4) / frameH)));
-      charCanvas.width  = Math.round(frameW * displayScale);
-      charCanvas.height = Math.round(frameH * displayScale);
-      spriteReady = true;
-    };
-    spriteImg.src = "Basic Charakter Spritesheet.png";
+    var cType   = BUNNY_TYPES[Math.floor(Math.random() * BUNNY_TYPES.length)];
+    var cX      = -CW;
+    var cFrame  = 0;
+    var cFrameT = 0;
+    var cLastT  = null;
 
-    function drawFrame() {
-      var ctx = charCanvas.getContext("2d");
-      ctx.clearRect(0, 0, charCanvas.width, charCanvas.height);
-      ctx.imageSmoothingEnabled = false;
-      ctx.drawImage(
-        spriteImg,
-        cFrame * frameW, cRow * frameH, frameW, frameH,
-        0, 0, charCanvas.width, charCanvas.height
-      );
+    var RUN_SPEED  = 130;  // px/s
+    var FRAME_RATE = 0.09; // s per animation frame
+
+    function nextBunny() {
+      var pool = BUNNY_TYPES.filter(function (n) { return n !== cType; });
+      cType   = pool[Math.floor(Math.random() * pool.length)];
+      cX      = -CW;
+      cFrame  = 0;
+      cFrameT = 0;
     }
 
-    function charTick(ts) {
-      if (!spriteReady) { raf(charTick); return; }
-      if (cLastT === null) { cLastT = ts; raf(charTick); return; }
+    function bunnyTick(ts) {
+      if (cLastT === null) { cLastT = ts; raf(bunnyTick); return; }
       var dt = Math.min((ts - cLastT) / 1000, 0.05);
-      cLastT  = ts;
+      cLastT = ts;
+
+      cX      += RUN_SPEED * dt;
       cFrameT += dt;
-      cStateT += dt;
-
-      var vw = window.innerWidth || 480;
-
-      if (cIdle) {
-        // Stand still facing forward; cycle idle frames slowly
-        cRow = ROW_IDLE;
-        if (cFrameT >= IDLE_FRAME_RATE) {
-          cFrameT = 0;
-          cFrame  = (cFrame + 1) % SPRITE_COLS;
-        }
-        if (cStateT >= cIdleEnd) {
-          cIdle   = false;
-          cRow    = ROW_RIGHT;
-          cFrame  = 0;
-          cFrameT = 0;
-          cStateT = 0;
-        }
-      } else {
-        // Walk right
-        cRow = ROW_RIGHT;
-        cX  += WALK_SPEED * dt;
-        if (cFrameT >= FRAME_RATE) {
-          cFrameT = 0;
-          cFrame  = (cFrame + 1) % SPRITE_COLS;
-        }
-        // Occasionally pause mid-screen for 1.5–3 s
-        if (cX > vw * 0.3 && cX < vw * 0.7 && Math.random() < dt * 0.15) {
-          cIdle    = true;
-          cIdleEnd = 1.5 + Math.random() * 1.5;
-          cStateT  = 0;
-          cFrame   = 0;
-        }
-        // Wrap: reappear from left
-        if (cX > vw + charCanvas.width) {
-          cX = -charCanvas.width;
-        }
+      if (cFrameT >= FRAME_RATE) {
+        cFrameT = 0;
+        cFrame  = (cFrame + 1) % RUN_FRAMES;
       }
 
-      drawFrame();
+      var vw = window.innerWidth || 480;
+      if (cX > vw + CW) {
+        nextBunny();
+      }
+
+      var img = sprites[cType];
+      if (img && img.complete && img.naturalWidth > 0) {
+        var ctx = charCanvas.getContext("2d");
+        ctx.clearRect(0, 0, CW, CH);
+        ctx.imageSmoothingEnabled = false;
+        ctx.drawImage(img, cFrame * FRAME_W, 0, FRAME_W, FRAME_H, 0, 0, CW, CH);
+      }
+
       charCanvas.style.left = Math.round(cX) + "px";
-      raf(charTick);
+      raf(bunnyTick);
     }
 
-    raf(charTick);
+    raf(bunnyTick);
   }
-  // ───────────────────────────────────────────────────────────
+  // ────────────────────────────────────────────────────────────
 
   // ── Daily math formula ──────────────────────────────────────
   var dogStripEl   = document.getElementById("dog-strip");
