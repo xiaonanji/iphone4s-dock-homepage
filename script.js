@@ -317,9 +317,9 @@
     var BUNNY_NAMES = ["BlackWhite","Brown2Color","BrownWhite","BunnyBlack","BunnyBrown",
                        "DemonicBunny","FantasyBunny","GreyBunny","LightBrown","WhiteBunny"];
     BUNNY_NAMES.forEach(function (name) {
-      CHAR_POOL.push({ anims: { run: { src:"AllBunniesFree/"+name+"/Running.png", frames:8 } } });
+      CHAR_POOL.push({ w:1, anims: { run: { src:"AllBunniesFree/"+name+"/Running.png", frames:8 } } });
     });
-    CHAR_POOL.push({ anims: { run: { src:"Cats/BONUSgift/GreyBunnyPaid/Running.png", frames:8 } } });
+    CHAR_POOL.push({ w:1, anims: { run: { src:"Cats/BONUSgift/GreyBunnyPaid/Running.png", frames:8 } } });
 
     var catAnimKeys = ["run","jump","idle","idle2","attack","hurt","sit","lick"];
     CAT_GROUPS.forEach(function (cat) {
@@ -328,7 +328,7 @@
         var key = catAnimKeys[i];
         if (cat[key]) { charAnims[key] = { src: cat.base + cat[key], frames: ANIM_FRAMES[key] }; }
       }
-      CHAR_POOL.push({ anims: charAnims });
+      CHAR_POOL.push({ w:2, anims: charAnims });
     });
 
     // Preload every image up front
@@ -396,9 +396,22 @@
     }
 
     function pickCharacter() {
-      var next;
-      do { next = Math.floor(Math.random() * CHAR_POOL.length); }
-      while (next === cCharIdx && CHAR_POOL.length > 1);
+      var total = 0;
+      for (var i = 0; i < CHAR_POOL.length; i++) {
+        if (i !== cCharIdx) { total += CHAR_POOL[i].w; }
+      }
+      var r = Math.random() * total;
+      var next = cCharIdx;
+      for (var i = 0; i < CHAR_POOL.length; i++) {
+        if (i === cCharIdx) { continue; }
+        r -= CHAR_POOL[i].w;
+        if (r <= 0) { next = i; break; }
+      }
+      if (next === cCharIdx) {
+        for (var i = CHAR_POOL.length - 1; i >= 0; i--) {
+          if (i !== cCharIdx) { next = i; break; }
+        }
+      }
       cCharIdx  = next;
       cState    = "run";
       cStateDur = randDur("run");
