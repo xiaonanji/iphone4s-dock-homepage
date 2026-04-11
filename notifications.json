@@ -22,7 +22,7 @@
     "end": "2026-04-11"
   },
   {
-    "text": "Ceva's Theorem: In △ABC, cevians AD, BE, CF concurrent iff (AF/FB)·(BD/DC)·(CE/EA)=1. Ex: If AF=3, FB=2, BD=4, DC=2, then CE/EA=1/3. Menelaus' Theorem: Points D,E,F on sides BC,CA,AB collinear iff (AF/FB)·(BD/DC)·(CE/EA)=-1. Ex: If AF=2, FB=3, BD=1, DC=2, then CE/EA=-3/4.",
+    "text": "Ceva's Theorem: In △ABC, cevians AD,BE,CF concurrent iff (AF/FB)·(BD/DC)·(CE/EA)=1. Problem: In △ABC, cevians AD,BE,CF meet at P. Given AF/FB=2/3, BD/DC=5/4, find CE/EA. Solution: (2/3)·(5/4)·(CE/EA)=1 → CE/EA=6/5. Menelaus' Theorem: Points D∈BC,E∈CA,F∈AB collinear iff (AF/FB)·(BD/DC)·(CE/EA)=-1. Problem: Line ℓ cuts △ABC at D∈BC,E∈CA,F∈AB. Given AF/FB=5/3, BD/DC=7/2, find CE/EA. Solution: (5/3)·(7/2)·(CE/EA)=-1 → CE/EA=-6/35.",
     "end": "2026-04-11"
   },
   {
