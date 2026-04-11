@@ -465,8 +465,12 @@
     var matched = "";
     for (var i = 0; i < notifications.length; i++) {
       var n = notifications[i];
-      if (n.start && n.end && n.text && today >= n.start && today <= n.end) {
-        matched = n.text; // last match wins on overlap
+      if (!n.text) { continue; }
+      if (!n.end) { continue; }                          // no end date → skip
+      var start = n.start || today;                       // no start date → treat as today
+      if (n.end < start) { continue; }                   // end before start → skip
+      if (today >= start && today <= n.end) {
+        matched = n.text;                                 // last match wins on overlap
       }
     }
     notificationNode.textContent = matched;
