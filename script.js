@@ -356,15 +356,21 @@
     var cLastT   = null;
 
     function randDur(state) {
-      var p = STATE_PROPS[state];
-      return p.minDur + Math.random() * (p.maxDur - p.minDur);
+      var p  = STATE_PROPS[state];
+      var vw = window.innerWidth || 480;
+      // Scale durations down on narrow screens so transitions are visible within the
+      // viewport. Reference width 800px = full durations; iPhone 480px ≈ 0.6×.
+      var scale = Math.max(0.3, Math.min(1.0, vw / 800));
+      return (p.minDur + Math.random() * (p.maxDur - p.minDur)) * scale;
     }
 
     // Pick next state using weighted transitions; idle/sit only allowed when on screen
     function advanceState(char) {
       var pool = TRANSITIONS[cState] || [{ s:"run", w:1 }];
       var vw   = window.innerWidth || 480;
-      var onScreen = cX > 50 && cX < vw - CW;
+      // Allow transitions as soon as the sprite is visible and until 90% across —
+      // wider than vw-CW so narrow screens get transitions throughout the crossing.
+      var onScreen = cX > 0 && cX < vw * 0.9;
       var available = [];
       for (var i = 0; i < pool.length; i++) {
         var t = pool[i];
