@@ -252,39 +252,69 @@
     window.onresize = fitDisplay;
   }
 
-  // ── Bunny runner ────────────────────────────────────────────
+  // ── Animal runner (bunnies + cats) ──────────────────────────
   var charCanvas = document.getElementById("char-sprite");
   if (charCanvas) {
     var raf = window.requestAnimationFrame ||
               window.webkitRequestAnimationFrame ||
               function (fn) { return setTimeout(fn, 16); };
 
-    var BUNNY_TYPES = [
-      "BlackWhite", "Brown2Color", "BrownWhite", "BunnyBlack",
-      "BunnyBrown", "DemonicBunny", "FantasyBunny",
-      "GreyBunny", "LightBrown", "WhiteBunny"
+    // All sprites are 32×32 px tiles. Bunnies = 8 frames, cats = 7 frames.
+    var CHARACTERS = [
+      // Bunnies
+      { src: "AllBunniesFree/BlackWhite/Running.png",   frames: 8 },
+      { src: "AllBunniesFree/Brown2Color/Running.png",  frames: 8 },
+      { src: "AllBunniesFree/BrownWhite/Running.png",   frames: 8 },
+      { src: "AllBunniesFree/BunnyBlack/Running.png",   frames: 8 },
+      { src: "AllBunniesFree/BunnyBrown/Running.png",   frames: 8 },
+      { src: "AllBunniesFree/DemonicBunny/Running.png", frames: 8 },
+      { src: "AllBunniesFree/FantasyBunny/Running.png", frames: 8 },
+      { src: "AllBunniesFree/GreyBunny/Running.png",    frames: 8 },
+      { src: "AllBunniesFree/LightBrown/Running.png",   frames: 8 },
+      { src: "AllBunniesFree/WhiteBunny/Running.png",   frames: 8 },
+      // Bonus bunny
+      { src: "Cats/BONUSgift/GreyBunnyPaid/Running.png",            frames: 8 },
+      // Cats
+      { src: "Cats/BrownCat/RunCattt.png",                          frames: 7 },
+      { src: "Cats/ChristmasCatPaid/RunCattt.png",                  frames: 7 },
+      { src: "Cats/EgyptCatPaid/RunCatb.png",                       frames: 7 },
+      { src: "Cats/ThreeColorPaid/RunCatt.png",                     frames: 7 },
+      { src: "Cats/White-DifferentEyes/RunCatttt.png",              frames: 7 },
+      { src: "Cats/BlackCat/PNG/RunCatb.png",                       frames: 7 },
+      { src: "Cats/Siamese/PNG/RunCattt.png",                       frames: 7 },
+      { src: "Cats/TigerCatPaid/PNG/RunCatt.png",                   frames: 7 },
+      { src: "Cats/DemonicPaid/PNG/RunCatd.png",                    frames: 7 },
+      { src: "Cats/BatmanCatPaid/BlackMask/RunCatt.png",            frames: 7 },
+      { src: "Cats/BatmanCatPaid/DarkBlueMask/RunCatt.png",         frames: 7 },
+      { src: "Cats/CatClassical/BlackCollor/RunCatt.png",           frames: 7 },
+      { src: "Cats/CatClassical/BlueCollar/RunCat.png",             frames: 7 },
+      { src: "Cats/CatClassical/GreenCollor/RunCatt.png",           frames: 7 },
+      { src: "Cats/CatClassical/OrangeCollor/RunCatt.png",          frames: 7 },
+      { src: "Cats/CatClassical/PinkCollor/RunCatt.png",            frames: 7 },
+      { src: "Cats/CatClassical/PurpleCollor/RunCatt.png",          frames: 7 },
+      { src: "Cats/CatClassical/RedCollor/RunCatt.png",             frames: 7 },
+      { src: "Cats/CatClassical/YellowCollor/RunCatt.png",          frames: 7 },
+      { src: "Cats/Halloween/Vampire/RunCatb.png",                  frames: 7 },
+      { src: "Cats/Halloween/Wizard/RunCatb.png",                   frames: 7 }
     ];
 
-    // All Running sheets are 256×32 — 8 frames of 32×32
-    var FRAME_W    = 32;
-    var FRAME_H    = 32;
-    var RUN_FRAMES = 8;
-    var SCALE      = 2;          // 64×64 px canvas — fills the 70px strip
-    var CW         = FRAME_W * SCALE;
-    var CH         = FRAME_H * SCALE;
+    var FRAME_W = 32;
+    var FRAME_H = 32;
+    var SCALE   = 2;
+    var CW      = FRAME_W * SCALE;
+    var CH      = FRAME_H * SCALE;
 
     charCanvas.width  = CW;
     charCanvas.height = CH;
 
-    // Pre-load every Running sheet
-    var sprites = {};
-    BUNNY_TYPES.forEach(function (name) {
+    // Pre-load all sprites
+    CHARACTERS.forEach(function (c) {
       var img = new Image();
-      img.src = "AllBunniesFree/" + name + "/Running.png";
-      sprites[name] = img;
+      img.src = c.src;
+      c.img = img;
     });
 
-    var cType   = BUNNY_TYPES[Math.floor(Math.random() * BUNNY_TYPES.length)];
+    var cIdx    = Math.floor(Math.random() * CHARACTERS.length);
     var cX      = -CW;
     var cFrame  = 0;
     var cFrameT = 0;
@@ -293,9 +323,12 @@
     var RUN_SPEED  = 130;  // px/s
     var FRAME_RATE = 0.09; // s per animation frame
 
-    function nextBunny() {
-      var pool = BUNNY_TYPES.filter(function (n) { return n !== cType; });
-      cType   = pool[Math.floor(Math.random() * pool.length)];
+    function nextCharacter() {
+      var next;
+      do {
+        next = Math.floor(Math.random() * CHARACTERS.length);
+      } while (next === cIdx && CHARACTERS.length > 1);
+      cIdx    = next;
       cX      = -CW;
       cFrame  = 0;
       cFrameT = 0;
@@ -306,19 +339,21 @@
       var dt = Math.min((ts - cLastT) / 1000, 0.05);
       cLastT = ts;
 
+      var char = CHARACTERS[cIdx];
+
       cX      += RUN_SPEED * dt;
       cFrameT += dt;
       if (cFrameT >= FRAME_RATE) {
         cFrameT = 0;
-        cFrame  = (cFrame + 1) % RUN_FRAMES;
+        cFrame  = (cFrame + 1) % char.frames;
       }
 
       var vw = window.innerWidth || 480;
       if (cX > vw + CW) {
-        nextBunny();
+        nextCharacter();
       }
 
-      var img = sprites[cType];
+      var img = char.img;
       if (img && img.complete && img.naturalWidth > 0) {
         var ctx = charCanvas.getContext("2d");
         ctx.clearRect(0, 0, CW, CH);
