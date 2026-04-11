@@ -139,6 +139,22 @@ body {
   align-items: center;
 }
 
+.date-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
 .date-line {
   color: #00ff41;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -147,9 +163,6 @@ body {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-align: center;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-  flex: 1 1 auto;
 }
 
 .clock-main {
@@ -185,9 +198,9 @@ body {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  -webkit-box-align: flex-end;
-  -webkit-align-items: flex-end;
-  align-items: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
@@ -199,12 +212,12 @@ body {
 .weekday-block {
   color: #00ff41;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 18px;
-  line-height: 1;
+  font-size: 16px;
+  line-height: 1.1;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding-bottom: 11px;
-  padding-left: 7px;
+  text-align: center;
+  margin-top: 2px;
 }
 
 .weather-icon {
@@ -216,11 +229,12 @@ body {
 }
 
 .weather-condition {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 11px;
+  color: #00ff41;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 14px;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 }
 
 .temperature-block {
@@ -362,8 +376,7 @@ body {
   }
 
   .weekday-block {
-    font-size: 16px;
-    padding-bottom: 10px;
+    font-size: 14px;
   }
 
   .weather-condition {
@@ -417,8 +430,7 @@ body {
   }
 
   .weekday-block {
-    font-size: 15px;
-    padding-bottom: 9px;
+    font-size: 13px;
   }
 
   .weather-icon {
