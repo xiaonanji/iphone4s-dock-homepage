@@ -280,7 +280,7 @@ body {
   display: flex;
 }
 
-.dog-strip.math-mode .dog-sprite {
+.dog-strip.math-mode .char-sprite {
   opacity: 0;
 }
 
@@ -349,18 +349,13 @@ body {
   border-color: rgba(0, 255, 65, 0.5);
 }
 
-.dog-sprite {
+.char-sprite {
   position: absolute;
-  bottom: 3px;
+  bottom: 0;
   left: 0;
-  margin: 0;
-  padding: 0;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 10px;
-  line-height: 1.4;
-  color: rgba(0, 255, 65, 0.72);
-  white-space: pre;
   pointer-events: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 @-webkit-keyframes pulse {
