@@ -93,7 +93,7 @@
     hoursNode.innerHTML = pad(now.getHours());
     minutesNode.innerHTML = pad(now.getMinutes());
     dateNode.innerHTML = MONTH_SHORT[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear();
-    weekdayNode.innerHTML = DAY_SHORT[now.getDay()];
+    weekdayNode.innerHTML = DAYS[now.getDay()].toUpperCase();
   }
 
   function weatherLabel(code) {
