@@ -112,10 +112,31 @@ body {
 .date-band {
   position: relative;
   z-index: 1;
-  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.weather-left {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
 }
 
 .date-line {
@@ -125,6 +146,10 @@ body {
   line-height: 0.96;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  text-align: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .clock-main {
@@ -160,6 +185,56 @@ body {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-align: flex-end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.weekday-block {
+  color: #00ff41;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-bottom: 11px;
+  padding-left: 7px;
+}
+
+.weather-icon {
+  width: 38px;
+  height: 26px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.weather-condition {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 11px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.temperature-block {
+  text-align: right;
+}
+
+.bottom-band {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
@@ -169,61 +244,7 @@ body {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
   flex: 0 0 auto;
-}
-
-.bottom-band {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-  align-items: flex-end;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 auto;
-  flex: 0 0 auto;
-}
-
-.weekday-block {
-  width: 28%;
-  -webkit-flex: 0 0 28%;
-  flex: 0 0 28%;
-  color: #00ff41;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 43px;
-  line-height: 0.9;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.weather-block {
-  width: 42%;
-  -webkit-flex: 0 0 42%;
-  flex: 0 0 42%;
-  padding-left: 4px;
-  text-align: center;
-}
-
-.weather-icon {
-  width: 50px;
-  height: 34px;
-  margin: 0 auto 2px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-}
-
-.weather-condition {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 13px;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.temperature-block {
-  width: 30%;
-  -webkit-flex: 0 0 30%;
-  flex: 0 0 30%;
-  text-align: right;
+  padding: 0 14px 4px;
 }
 
 .temperature-now {
@@ -252,56 +273,24 @@ body {
   overflow: hidden;
 }
 
-/* Math formula panel – hidden by default */
-.math-strip {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  padding: 2px 28px 2px 8px;
-  pointer-events: none;
-}
-
-.dog-strip.math-mode .math-strip {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-}
-
-.dog-strip.math-mode .char-sprite {
-  opacity: 0;
-}
-
 .formula-label {
-  color: rgba(0, 255, 65, 0.52);
+  color: rgba(0, 255, 65, 0.82);
   font-family: "Courier New", Courier, monospace;
-  font-size: 9px;
-  line-height: 1.1;
+  font-size: 13px;
+  line-height: 1.3;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
   text-align: center;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .formula-katex {
   color: rgba(0, 255, 65, 0.92);
-  font-size: 28px;
+  font-size: 26px;
   line-height: 1;
   text-align: center;
   max-width: 100%;
@@ -313,40 +302,6 @@ body {
 .formula-katex .MathJax_Display {
   color: inherit !important;
   display: inline !important;
-}
-
-/* Toggle button */
-.strip-toggle {
-  position: absolute;
-  top: 50%;
-  right: 3px;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  background: none;
-  border: 1px solid rgba(0, 255, 65, 0.22);
-  border-radius: 3px;
-  color: rgba(0, 255, 65, 0.45);
-  font-size: 11px;
-  line-height: 1;
-  padding: 1px 3px;
-  cursor: pointer;
-  z-index: 20;
-  font-family: "Courier New", Courier, monospace;
-  -webkit-transition: color 0.15s, border-color 0.15s;
-  transition: color 0.15s, border-color 0.15s;
-  pointer-events: auto;
-}
-
-.strip-toggle:hover,
-.strip-toggle:focus {
-  color: rgba(0, 255, 65, 0.9);
-  border-color: rgba(0, 255, 65, 0.6);
-  outline: none;
-}
-
-.dog-strip.math-mode .strip-toggle {
-  color: rgba(0, 255, 65, 0.85);
-  border-color: rgba(0, 255, 65, 0.5);
 }
 
 .char-sprite {
@@ -407,11 +362,12 @@ body {
   }
 
   .weekday-block {
-    font-size: 40px;
+    font-size: 16px;
+    padding-bottom: 10px;
   }
 
   .weather-condition {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .temperature-now {
@@ -420,6 +376,10 @@ body {
 
   .weather-range {
     font-size: 17px;
+  }
+
+  .formula-label {
+    font-size: 12px;
   }
 }
 
@@ -437,7 +397,11 @@ body {
   }
 
   .formula-katex {
-    font-size: 32px;
+    font-size: 30px;
+  }
+
+  .formula-label {
+    font-size: 12px;
   }
 
   .clock-face {
@@ -453,13 +417,13 @@ body {
   }
 
   .weekday-block {
-    font-size: 32px;
+    font-size: 15px;
+    padding-bottom: 9px;
   }
 
   .weather-icon {
-    width: 40px;
-    height: 28px;
-    margin-right: auto;
+    width: 32px;
+    height: 22px;
   }
 
   .weather-condition {

@@ -335,11 +335,8 @@
   // ────────────────────────────────────────────────────────────
 
   // ── Daily math formula ──────────────────────────────────────
-  var dogStripEl   = document.getElementById("dog-strip");
-  var mathStripEl  = document.getElementById("math-strip");
   var formulaLabel = document.getElementById("formula-label");
   var formulaKatex = document.getElementById("formula-katex");
-  var toggleBtn    = document.getElementById("strip-toggle");
 
   function getDayOfYear() {
     var now   = new Date();
@@ -357,28 +354,6 @@
       MathJax.Hub.Queue(["Typeset", MathJax.Hub, formulaKatex]);
     }
   }
-
-  function applyMode(mode) {
-    if (mode === "math") {
-      dogStripEl.classList.add("math-mode");
-    } else {
-      dogStripEl.classList.remove("math-mode");
-    }
-    try { localStorage.setItem("displayMode", mode); } catch (e) {}
-  }
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      var current = dogStripEl.classList.contains("math-mode") ? "math" : "dog";
-      applyMode(current === "math" ? "dog" : "math");
-    });
-  }
-
-  // Restore last mode
-  var savedMode = "dog";
-  try { savedMode = localStorage.getItem("displayMode") || "dog"; } catch (e) {}
-  applyMode(savedMode);
 
   // Fetch formulas
   var req = new XMLHttpRequest();

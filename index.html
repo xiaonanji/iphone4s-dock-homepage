@@ -15,8 +15,16 @@
     <div class="display-shell">
       <main class="display" id="display" role="main" aria-label="Desk clock display">
         <div class="clock-face">
-          <header class="date-band" aria-label="Date">
+          <header class="date-band" aria-label="Date and weather">
+            <div class="weather-left">
+              <div class="weather-icon" id="weather-icon" aria-hidden="true"></div>
+              <div class="weather-condition" id="weather-condition">Cloudy</div>
+            </div>
             <div class="date-line" id="date-line">APR 10, 2026</div>
+            <div class="temperature-block">
+              <div class="temperature-now" id="weather-temp">24&deg;C</div>
+              <div class="weather-range" id="weather-range">18&deg; / 24&deg;</div>
+            </div>
           </header>
 
           <section class="time-band" aria-label="Current time">
@@ -25,29 +33,16 @@
               <span class="clock-separator" aria-hidden="true">:</span>
               <span id="clock-minutes">58</span>
             </div>
+            <div class="weekday-block" id="weekday-line">THU</div>
           </section>
 
-          <footer class="bottom-band" aria-label="Weekday and weather">
-            <div class="weekday-block" id="weekday-line">THU</div>
-
-            <div class="weather-block">
-              <div class="weather-icon" id="weather-icon" aria-hidden="true"></div>
-              <div class="weather-condition" id="weather-condition">Cloudy</div>
-            </div>
-
-            <div class="temperature-block">
-              <div class="temperature-now" id="weather-temp">24&deg;C</div>
-              <div class="weather-range" id="weather-range">18&deg; / 24&deg;</div>
-            </div>
+          <footer class="bottom-band" aria-label="Math formula">
+            <div class="formula-label" id="formula-label"></div>
+            <div class="formula-katex" id="formula-katex"></div>
           </footer>
         </div>
         <div class="dog-strip" id="dog-strip" aria-hidden="true">
           <canvas class="char-sprite" id="char-sprite"></canvas>
-          <div class="math-strip" id="math-strip">
-            <div class="formula-label" id="formula-label"></div>
-            <div class="formula-katex" id="formula-katex"></div>
-          </div>
-          <button class="strip-toggle" id="strip-toggle" title="Toggle formula / dog">&#8721;</button>
         </div>
       </main>
     </div>
