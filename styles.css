@@ -87,9 +87,9 @@ body {
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -208,6 +208,7 @@ body {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
   flex: 0 0 auto;
+  margin-top: 16px;
 }
 
 .weekday-block {
@@ -259,7 +260,7 @@ body {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
   flex: 0 0 auto;
-  padding: 8px 14px 0;
+  padding: 16px 14px 0;
 }
 
 .temperature-now {
@@ -289,7 +290,7 @@ body {
 }
 
 .formula-label {
-  color: rgba(0, 255, 65, 0.82);
+  color: rgba(255, 195, 60, 0.85);
   font-family: "Courier New", Courier, monospace;
   font-size: 15px;
   line-height: 1.3;
@@ -304,7 +305,7 @@ body {
 }
 
 .formula-katex {
-  color: rgba(0, 255, 65, 0.92);
+  color: rgba(255, 200, 50, 0.95);
   font-size: 34px;
   line-height: 1;
   text-align: center;
@@ -312,7 +313,7 @@ body {
   overflow: hidden;
 }
 
-/* MathJax output inherits the green colour from the parent */
+/* MathJax output inherits colour from the parent */
 .formula-katex .MathJax,
 .formula-katex .MathJax_Display {
   color: inherit !important;
