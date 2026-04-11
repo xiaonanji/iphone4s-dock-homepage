@@ -3,5 +3,10 @@
     "text": "Example notification",
     "start": "2026-04-11",
     "end": "2026-04-11"
+  },
+  {
+    "text": "Lunch time!",
+    "start": "2026-04-11",
+    "end": "2026-04-11"
   }
 ]
