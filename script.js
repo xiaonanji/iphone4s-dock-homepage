@@ -94,6 +94,7 @@
     minutesNode.innerHTML = pad(now.getMinutes());
     dateNode.innerHTML = MONTH_SHORT[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear();
     weekdayNode.innerHTML = DAYS[now.getDay()].toUpperCase();
+    checkFormulaDay();
   }
 
   function weatherLabel(code) {
@@ -508,6 +509,8 @@
   // ── Daily math formula ──────────────────────────────────────
   var formulaLabel = document.getElementById("formula-label");
   var formulaKatex = document.getElementById("formula-katex");
+  var cachedFormulas = null;
+  var lastRenderedDay = -1;
 
   function getDayOfYear() {
     var now   = new Date();
@@ -517,12 +520,20 @@
 
   function renderFormula(formulas) {
     if (!formulas || !formulas.length) { return; }
-    var idx     = getDayOfYear() % formulas.length;
+    var day     = getDayOfYear();
+    var idx     = day % formulas.length;
     var formula = formulas[idx];
     formulaLabel.textContent = formula.title || "";
     formulaKatex.innerHTML = "\\(" + (formula.latex || "") + "\\)";
     if (window.MathJax) {
       MathJax.Hub.Queue(["Typeset", MathJax.Hub, formulaKatex]);
+    }
+    lastRenderedDay = day;
+  }
+
+  function checkFormulaDay() {
+    if (cachedFormulas && getDayOfYear() !== lastRenderedDay) {
+      renderFormula(cachedFormulas);
     }
   }
 
@@ -533,8 +544,8 @@
     if (req.readyState !== 4) { return; }
     if (req.status >= 200 && req.status < 300) {
       try {
-        var formulas = JSON.parse(req.responseText);
-        renderFormula(formulas);
+        cachedFormulas = JSON.parse(req.responseText);
+        renderFormula(cachedFormulas);
       } catch (e) {}
     }
   };
