@@ -518,6 +518,20 @@
     return Math.floor((now - start) / 86400000); // 0-indexed
   }
 
+  function fitFormula() {
+    var mj = formulaKatex.querySelector(".MathJax, .MathJax_Display");
+    if (!mj) { return; }
+    mj.style.display = "inline-block";
+    mj.style.transformOrigin = "center center";
+    mj.style.transform = "";
+    var containerWidth = formulaKatex.clientWidth;
+    var mathWidth = mj.offsetWidth;
+    if (containerWidth > 0 && mathWidth > containerWidth) {
+      var scale = containerWidth / mathWidth;
+      mj.style.transform = "scale(" + scale + ")";
+    }
+  }
+
   function renderFormula(formulas) {
     if (!formulas || !formulas.length) { return; }
     var day     = getDayOfYear();
@@ -526,10 +540,18 @@
     formulaLabel.textContent = formula.title || "";
     formulaKatex.innerHTML = "\\(" + (formula.latex || "") + "\\)";
     if (window.MathJax) {
-      MathJax.Hub.Queue(["Typeset", MathJax.Hub, formulaKatex]);
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub, formulaKatex], fitFormula);
     }
     lastRenderedDay = day;
   }
+
+  window.addEventListener("resize", function () {
+    if (window.MathJax) {
+      MathJax.Hub.Queue(fitFormula);
+    } else {
+      fitFormula();
+    }
+  });
 
   function checkFormulaDay() {
     if (cachedFormulas && getDayOfYear() !== lastRenderedDay) {
