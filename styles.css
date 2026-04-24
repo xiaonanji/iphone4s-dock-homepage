@@ -317,7 +317,7 @@ body {
 .formula-katex .MathJax,
 .formula-katex .MathJax_Display {
   color: inherit !important;
-  display: inline !important;
+  display: inline-block !important;
 }
 
 .notification-text {
