@@ -519,16 +519,17 @@
   }
 
   function fitFormula() {
+    formulaKatex.style.fontSize = "";
     var mj = formulaKatex.querySelector(".MathJax, .MathJax_Display");
     if (!mj) { return; }
-    mj.style.display = "inline-block";
-    mj.style.transformOrigin = "center center";
-    mj.style.transform = "";
-    var containerWidth = formulaKatex.clientWidth;
-    var mathWidth = mj.offsetWidth;
-    if (containerWidth > 0 && mathWidth > containerWidth) {
-      var scale = containerWidth / mathWidth;
-      mj.style.transform = "scale(" + scale + ")";
+    var available = formulaKatex.clientWidth;
+    if (available <= 0) { return; }
+    var rendered = mj.offsetWidth;
+    if (rendered > available) {
+      var baseSize = parseFloat(window.getComputedStyle(formulaKatex).fontSize);
+      if (baseSize > 0) {
+        formulaKatex.style.fontSize = (baseSize * available / rendered) + "px";
+      }
     }
   }
 
